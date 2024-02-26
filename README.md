@@ -47,6 +47,8 @@ With restore.sh :
 *   All the extensions will be installed on ~/.local/share/gnome-shell/extensions
 *   All the themes and icons will be installed in ~/.themes and in ~/.icons
 
+<hr>
+
 How to full backup your custom theme with its config :
 <pre>
   git clone https://github.com/Mouadh-Jedli/theme_script.git
