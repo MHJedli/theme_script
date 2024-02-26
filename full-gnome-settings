@@ -128,7 +128,7 @@ font-antialiasing='grayscale'
 font-hinting='slight'
 font-name='Ubuntu 10'
 gtk-theme='Orchis-Purple-Dark'
-icon-theme='Reversal-purple-dark'
+icon-theme='Reversal-purple'
 show-battery-percentage=true
 toolbar-style='text'
 
