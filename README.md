@@ -2,7 +2,8 @@
 ![Screenshot from 2024-02-09 22-46-13](https://github.com/Mouadh-Jedli/theme_script/assets/53920740/d805280a-1bdf-45f0-a634-62e73a7232fe)
 
 # NOTE
-# This script is still under development. It will ONLY install the extensions mentioned below !
+*   Instead of theme_script.sh, we have backup.sh and restore.sh so you can either restore a backed up theme<br>
+    or do a full backup of your theme (Extensions, custom themes, custom icons and its configurations)
 
 Extensions used for this theme : 
 
@@ -29,18 +30,37 @@ Custom Themes used for this theme in Tweaks app :
 *   Icons : Reversal-purple-dark
 *   Shell : Orchis-Purple-Dark
 
-How to install (for now): 
+How to restore this custom theme (Install it) : 
 <pre>
   git clone https://github.com/Mouadh-Jedli/theme_script.git
   cd theme_script
-  ./theme_script
+  bash restore.sh or ./restore.sh
 </pre>
 
-With this script :
+# NOTE
+The restore.sh will set "wallpaper.jpg" inside "Background" folder as default background. If you want to change it inside the script<br>
+just replace the background image with another with keeping "wallpaper.jpg" as its name
 
-*   Extensions and Tweaks apps will be installed
+With restore.sh :
+
+*   Extensions, Tweaks and Dconf Editor apps will be installed
 *   All the extensions will be installed on ~/.local/share/gnome-shell/extensions
 *   All the themes and icons will be installed in ~/.themes and in ~/.icons
+
+How to full backup your custom theme with its config :
+<pre>
+  git clone https://github.com/Mouadh-Jedli/theme_script.git
+  cd theme_script
+  bash backup.sh or ./backup.sh
+</pre>
+
+With backup.sh :
+
+*   Dconf Editor app will be installed
+*   ~/.icons will be zipped into my-icons.tar.gz
+*   ~/.themes will be zipped into my-themes.tar.gz
+*   ~/.local/share/gnome-shell/extensions will be zipped into my-extensions.tar.gz
+*   a "full-gnome-settings" file will generated (your GNOME configs)
 
 # SCREENSHOTS
 ![Screenshot from 2024-02-09 22-52-55](https://github.com/Mouadh-Jedli/theme_script/assets/53920740/abfe3d74-d3f2-4fc4-ac91-abc3453c1dc9)
