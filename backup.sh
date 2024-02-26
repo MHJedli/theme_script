@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Database Update
+sudo apt update
+
 # Dconf Editor 
 sudo apt install dconf-editor
 
