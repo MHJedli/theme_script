@@ -16,12 +16,12 @@ tar --extract --file my-themes.tar.gz -C ~/ --strip-components=2
 # Restore my extensions
 tar --extract --file my-extensions.tar.gz -C ~/ --strip-components=2
 
-# 
+# setting up fonts and conky
 cp -r .fonts ~/
 cp -r .harmattan-assets ~/
 cp -r .harmattan-themes ~/
-
-cp conky_startup/* ~/.config/autostart
+mkdir ~/.config/autostart
+cp conky_startup/* ~/.config/autostart/
 
 # Restore GNOME settings
 dconf load / < full-gnome-settings
