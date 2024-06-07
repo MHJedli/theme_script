@@ -1,33 +1,58 @@
 #!/bin/bash
 
-# Database Update
+path=$(pwd)/Ubuntu-GNOME-42/GTK-Graphite
+
+
+echo "Updating database..."
+sleep 1
 sudo apt update
+clear
 
-# Dconf Editor , GNOME Tweaks and GNOME Extensions Installation
+echo "Installing Dconf Editor , GNOME Tweaks and GNOME Extensions..."
+sleep 1
 sudo apt install dconf-editor gnome-tweaks gnome-shell-extensions
+clear
 
-# Conky Installation
+echo "Installing Conky..."
+sleep 1
 sudo apt install jq curl conky
+clear
 
-# Restore custom Themes and Icons
-tar --extract --file my-icons.tar.gz -C ~/ --strip-components=2
-tar --extract --file my-themes.tar.gz -C ~/ --strip-components=2
+echo "Installing Themes and Icons..."
+sleep 1
+tar --extract --file $path/my-icons.tar.gz -C ~/ --strip-components=2
+tar --extract --file $path/my-themes.tar.gz -C ~/ --strip-components=2
+clear
 
-# Restore my extensions
-tar --extract --file my-extensions.tar.gz -C ~/ --strip-components=2
+echo "Installing The Extensions..."
+sleep 1
+tar --extract --file $path/my-extensions.tar.gz -C ~/ --strip-components=2
+clear
 
-# setting up fonts and conky
-cp -r .fonts ~/
-cp -r .harmattan-assets ~/
-cp -r .harmattan-themes ~/
+echo "Setting Up The Fonts and Conky..."
+sleep 1
+cp -r $path.fonts ~/
+cp -r $path.harmattan-assets ~/
+cp -r $path.harmattan-themes ~/
 mkdir ~/.config/autostart
-cp conky_startup/* ~/.config/autostart/
+cp $path/conky_startup/* ~/.config/autostart/
+clear
 
-# Restore GNOME settings
-dconf load / < full-gnome-settings
+echo "Applying The Custom DE Settings..."
+sleep 1
+dconf load / < $path/full-gnome-settings
+clear
 
-# Restore the Background
-cp -r Wallpapers ~/Pictures
+echo "Extracting Wallpapers in ~/Pictures and Applying Background..."
+sleep 1
+cp -r $path/Wallpapers ~/Pictures
 gsettings set org.gnome.desktop.background picture-uri file://$HOME/Pictures/Wallpapers/wave-Dark-nord-ubuntu.png
+clear
 
-echo "Log out and Log in so the extensions will work :)"
+echo -n "You want to Log Out Now To Fully Apply The Theme ? (Y/n) : "
+read r
+if [[ "$r" == "Y" || "$r" == "y" ]]; then
+    echo "Logging out in 3 seconds ..."
+    sleep 3
+    gnome-session-quit --no-prompt
+fi

@@ -1,22 +1,43 @@
 #!/bin/bash
 
-#Update the system
-#sudo apt update
-# Dconf Editor , GNOME Tweaks and GNOME Extensions Installation
+path=$(pwd)/Ubuntu-GNOME-42/Windows-Everforest-Dark
+
+echo "Updating the database..."
+sleep 1
+sudo apt update
+clear
+
+echo "Installing Dconf Editor , GNOME Tweaks and GNOME Extensions..."
+sleep 1
 sudo apt install dconf-editor gnome-tweaks gnome-shell-extensions
+clear
 
-# Restore custom Themes and Icons
-tar --extract --file my-icons.tar.gz -C ~/ --strip-components=2
-tar --extract --file my-themes.tar.gz -C ~/ --strip-components=2
+echo "Installing Themes and Icons..."
+sleep 1
+tar --extract --file $path/my-icons.tar.gz -C ~/ --strip-components=2
+tar --extract --file $path/my-themes.tar.gz -C ~/ --strip-components=2
+clear
 
-# Restore my extensions
-tar --extract --file my-extensions.tar.gz -C ~/ --strip-components=2
+echo "Installing the extensions..."
+sleep 1
+tar --extract --file $path/my-extensions.tar.gz -C ~/ --strip-components=2
+clear
 
-# Restore GNOME settings
-dconf load / < full-gnome-settings
+echo "Applying The Custom DE Settings..."
+sleep 1
+dconf load / < $path/full-gnome-settings
+clear
 
-# Restore the Background
-cp Background/wallpaper.jpg ~/Pictures
+echo "Extracting Wallpapers in ~/Pictures and Applying Background..."
+sleep 1
+cp $path/Background/wallpaper.jpg ~/Pictures
 gsettings set org.gnome.desktop.background picture-uri-dark file://$HOME/Pictures/wallpaper.jpg
+clear
 
-echo "Log out and Log in so the extensions will work :)"
+echo -n "You want to Log Out Now To Fully Apply The Theme ? (Y/n) : "
+read r
+if [[ "$r" == "Y" || "$r" == "y" ]]; then
+    echo "Logging out in 3 seconds ..."
+    sleep 3
+    gnome-session-quit --no-prompt
+fi
