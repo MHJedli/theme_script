@@ -1,40 +1,136 @@
 #!/bin/bash
 
-# Function Definitions
-showMainMenuOptions(){
+# Ubuntu 22.04 Menu
+showUbuntu22LTSGMenu(){
     clear
+    echo "--------------------------------------"
+    echo "|   Ubuntu 22.04 LTS - GNOME 42 DE   |"
+    echo "--------------------------------------"
     echo "Choose the theme that you want to apply : "
     echo "1. GTK Graphite"
     echo "2. My P Theme"
     echo "3. Windows 11"
     echo "4. Windows Everforest Dark"
-    echo "<CTRL+C>. Quit"
+    echo "5. Return to Previous Menu"
     echo -n "Enter Option: "
-}
-
-chooseMainMenuOptions(){
-    case $1 in
+    read option
+    case $option in
         1)
-            applyGGTheme
+            showGGThemeMenu
             ;;
         2)
-            applyPTheme
+            showPThemeMenu
             ;;
         3)
-            applyWinETheme
+            showWinEThemeMenu
             ;;
         4)
-            applyWinEDTheme
+            showWinEDThemeMenu
+            ;;
+        5)
+            showUbuntuMenu
             ;;
     esac
 }
 
-applyGGTheme(){
+# Ubuntu 24.04
+showUbuntu24LTSGMenu(){
+    clear
+    echo 'Themes will be available soon for Ubuntu 24.04...'
+    sleep 2
+    showUbuntuMenu
+}
+
+# Ubuntu Menu
+showUbuntuMenu(){
+    clear
+    echo "--------------------------------------"
+    echo "|                Ubuntu              |"
+    echo "--------------------------------------"
+    echo '1. Ubuntu 22.04 LTS - GNOME 42'
+    echo '2. Ubuntu 24.04 LTS - GNOME 46'
+    echo '3. Return to Main Menu'
+    echo -n "Enter Option: "
+    read option
+
+    case $option in 
+        1)
+            showUbuntu22LTSGMenu
+            ;;
+        2)
+            showUbuntu24LTSGMenu
+            ;;
+        3)
+            showMainMenu
+            ;;
+    esac
+ 
+}
+
+# Linux Mint 21.3 Cinnamon Menu
+showMint213CMenu(){
+    clear
+    echo 'Work In Progress ...'
+    sleep 2
+    showMintMenu
+}
+
+# Linux Mint Menu
+showMintMenu(){
+    clear
+    echo "--------------------------------------"
+    echo "|             Linux Mint             |"
+    echo "--------------------------------------"
+    echo '1. 21.3 - Cinnamon Edition'
+    echo '2. Return to Main Menu'
+    echo -n 'Enter Option: '
+    read option
+
+    case $option in
+        1)
+            showMint213CMenu
+            ;;
+        2)
+            showMainMenu
+            ;;
+    esac
+}
+
+# Main Menu
+showMainMenu(){
+    clear
+    echo "--------------------------------------"
+    echo "|   Welcome to the Theme Installer   |"
+    echo "--------------------------------------"
+    echo 'Choose Your Linux Distribution :'
+    echo '1. Ubuntu'
+    echo '2. Linux Mint'
+    echo "<CTRL+C>. Quit"
+    echo -n "Enter Option: "
+    read option
+
+    case $option in
+        1)
+            showUbuntuMenu
+            ;;
+        2)
+            showMintMenu
+            ;;
+    esac
+}
+
+# GTK Graphite Menu
+showGGThemeMenu(){
     clear
     Path="Ubuntu-GNOME-42/GTK-Graphite"
-    echo "-> GTK Graphite :"
+    echo "--------------------------------------"
+    echo "|   Ubuntu 22.04 LTS - GNOME 42 DE   |"
+    echo "|------------------------------------|"
+    echo "|    Selected Theme : GTK Graphite   |"
+    echo "--------------------------------------"
     echo "1. Apply Theme"
     echo "2. Preview Theme"
+    echo "3. Return To Previous Menu"
     echo -n "Enter Option: "
     read option
     case $option in
@@ -43,68 +139,32 @@ applyGGTheme(){
             ;;
         2)
             nautilus $Path/Screenshots/
+            showGGThemeMenu
             ;;
-        *)
-            echo "No Option Selected"
-            ;;
-    esac
-    echo "Press Enter to Go back to Main Menu ..."
-    read
-}
-
-applyPTheme(){
-    clear
-    Path="Ubuntu-GNOME-42/My-Theme"
-    echo "-> My P Theme :"
-    echo "1. Apply Theme"
-    echo "2. Preview Theme"
-    echo -n "Enter Option: "
-    read option
-    case $option in
-        1)
-            bash $Path/restore.sh
-            ;;
-        2)
-            nautilus $Path/Screenshots/
-            ;;
-        *)
-            echo "No Option Selected"
-            ;;
-    esac
-    echo "Press Enter to Go back to Main Menu ..."
-    read
-}
-
-applyWinETheme(){
-    clear
-    Path="Ubuntu-GNOME-42/Windows-11"
-    echo "-> Windows 11 :"
-    echo "1. Apply Theme"
-    echo "2. Preview Theme"
-    echo -n "Enter Option: "
-    read option
-    case $option in
-        1)
-            bash $Path/restore.sh
-            ;;
-
-        2)
-            nautilus $Path/Screenshots/
+        3)
+            showUbuntu22LTSGMenu
             ;;
         *)
             echo "No Option Selected !"
+            read
+            showGGThemeMenu
             ;;
     esac
-    echo "Press Enter to Go back to Main Menu ..."
-    read
+    
 }
 
-applyWinEDTheme(){
+# My Personal Theme Menu
+showPThemeMenu(){
     clear
-    Path="Ubuntu-GNOME-42/Windows-Everforest-Dark"
-    echo "-> Windows Everforest Dark :"
+    Path="Ubuntu-GNOME-42/My-Theme"
+    echo "--------------------------------------"
+    echo "|   Ubuntu 22.04 LTS - GNOME 42 DE   |"
+    echo "|------------------------------------|"
+    echo "|    Selected Theme : My P Theme     |"
+    echo "--------------------------------------"
     echo "1. Apply Theme"
     echo "2. Preview Theme"
+    echo "3. Return To Previous Menu"
     echo -n "Enter Option: "
     read option
     case $option in
@@ -114,18 +174,82 @@ applyWinEDTheme(){
         2)
             nautilus $Path/Screenshots/
             ;;
+        3)
+            showUbuntu22LTSGMenu
+            ;;
         *)
-            echo "No Option Selected"
+            echo "No Option Selected !"
+            read
+            showPThemeMenu
             ;;
     esac
-    echo "Press Enter to Go back to Main Menu ..."
-    read
+}
+
+# Windows 11 Theme Menu
+showWinEThemeMenu(){
+    clear
+    Path="Ubuntu-GNOME-42/Windows-11"
+    echo "--------------------------------------"
+    echo "|   Ubuntu 22.04 LTS - GNOME 42 DE   |"
+    echo "|------------------------------------|"
+    echo "|     Selected Theme : Windows 11    |"
+    echo "--------------------------------------"
+    echo "1. Apply Theme"
+    echo "2. Preview Theme"
+    echo "3. Return To Previous Menu"
+    echo -n "Enter Option: "
+    read option
+    case $option in
+        1)
+            bash $Path/restore.sh
+            ;;
+
+        2)
+            nautilus $Path/Screenshots/
+            ;;
+        3)
+            showUbuntu22LTSGMenu
+            ;;
+        *)
+            echo "No Option Selected !"
+            echo "Press Enter to Continue ..."
+            read
+            showWinEThemeMenu
+            ;;
+    esac
+}
+
+# Windows Everforest Theme Menu
+showWinEDThemeMenu(){
+    clear
+    Path="Ubuntu-GNOME-42/Windows-Everforest-Dark"
+    echo "------------------------------------------------"
+    echo "|        Ubuntu 22.04 LTS - GNOME 42 DE        |"
+    echo "|----------------------------------------------|"
+    echo "|    Selected Theme : Windows Everforest Dark  |"
+    echo "------------------------------------------------"
+    echo "1. Apply Theme"
+    echo "2. Preview Theme"
+    echo "3. Return To Previous Menu"
+    echo -n "Enter Option: "
+    read option
+    case $option in
+        1)
+            bash $Path/restore.sh
+            ;;
+        2)
+            nautilus $Path/Screenshots/
+            ;;
+        3)
+            showUbuntu22LTSGMenu
+            ;;
+        *)
+            echo "No Option Selected !"
+            read
+            showWinEThemeMenu
+            ;;
+    esac
 }
 
 # Main Script
-while :
-do
-    showMainMenuOptions
-    read option
-    chooseMainMenuOptions $option 
-done
+showMainMenu
