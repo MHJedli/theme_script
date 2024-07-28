@@ -122,7 +122,7 @@ showMainMenu(){
 # GTK Graphite Menu
 showGGThemeMenu(){
     clear
-    Path="Ubuntu-GNOME-42/GTK-Graphite"
+    Path="src/Ubuntu-GNOME-42/GTK-Graphite"
     echo "--------------------------------------"
     echo "|   Ubuntu 22.04 LTS - GNOME 42 DE   |"
     echo "|------------------------------------|"
@@ -156,7 +156,7 @@ showGGThemeMenu(){
 # My Personal Theme Menu
 showPThemeMenu(){
     clear
-    Path="Ubuntu-GNOME-42/My-Theme"
+    Path="src/Ubuntu-GNOME-42/My-Theme"
     echo "--------------------------------------"
     echo "|   Ubuntu 22.04 LTS - GNOME 42 DE   |"
     echo "|------------------------------------|"
@@ -188,7 +188,7 @@ showPThemeMenu(){
 # Windows 11 Theme Menu
 showWinEThemeMenu(){
     clear
-    Path="Ubuntu-GNOME-42/Windows-11"
+    Path="src/Ubuntu-GNOME-42/Windows-11"
     echo "--------------------------------------"
     echo "|   Ubuntu 22.04 LTS - GNOME 42 DE   |"
     echo "|------------------------------------|"
@@ -222,7 +222,7 @@ showWinEThemeMenu(){
 # Windows Everforest Theme Menu
 showWinEDThemeMenu(){
     clear
-    Path="Ubuntu-GNOME-42/Windows-Everforest-Dark"
+    Path="src/Ubuntu-GNOME-42/Windows-Everforest-Dark"
     echo "------------------------------------------------"
     echo "|        Ubuntu 22.04 LTS - GNOME 42 DE        |"
     echo "|----------------------------------------------|"
