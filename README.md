@@ -1,18 +1,31 @@
 # My Theme Script :
-A TUI script that helps you install one of the listed themes for now :
-*   GTK Graphite
-*   My Personal Made Theme
-*   Windows 11
-*   Windows Everforest Dark
+A TUI script that helps you install Themes according to your Linux Distribution
+<br><br>
+We Have 2 Distributions currently :
+*   Ubuntu
+*   Linux Mint
 <br>
 A simple idea of the script :
+<br>
 
-![Screenshot from 2024-06-07 19-56-54](https://github.com/MHJedli/theme_script/assets/53920740/f914fe81-aa92-4f38-a85d-fe990027a15d)
+![Screenshot from 2024-07-28 13-15-22](https://github.com/user-attachments/assets/b4c02fbc-c5a5-4c27-8702-db5212f078eb)
+
+![Screenshot from 2024-07-28 13-18-30](https://github.com/user-attachments/assets/b9b6d34f-23f5-4570-b186-c84f5ab71066)
+
+![Screenshot from 2024-07-28 13-21-50](https://github.com/user-attachments/assets/f860e26c-6e22-47f8-b6e4-a9fba699bc04)
+
 
 To run the script : 
 <pre>
   $ bash setup.sh
 </pre>
+or
+<pre>
+  $ ./setup.sh
+</pre>
 
 # NOTE :
-The script is still improving by time. So you can expect new themes and/or new features in the future.
+*   For now, Only Ubuntu 22.04 GNOME themes are ready to be used
+*   The script is still improving by time. So you can expect new themes and/or new features in the future.
+
+
