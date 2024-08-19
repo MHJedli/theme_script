@@ -1,5 +1,9 @@
 #!/bin/bash
 
+clear
+path=$(pwd)/src/Cinnamon-BigSur
+
+
 echo 'Updating the Database...'
 sleep 1
 sudo apt update
@@ -31,7 +35,7 @@ clear
 echo 'Extracting and Installing Wallpapers...'
 sleep 1
 mkdir $HOME/Pictures/Wallpapers
-unzip Wallpapers.zip -d $HOME/Pictures/Wallpapers/
+unzip $path/Wallpapers.zip -d $HOME/Pictures/Wallpapers/
 clear
 
 echo 'Installing Plank Dock and Nautilus File Manager...'
@@ -40,12 +44,12 @@ sudo apt install plank nautilus -y
 
 echo 'Applying Cinnamon DE - Bigsur Edition Theme...'
 sleep 1
-unzip cinnamon.zip -d $HOME/.local/share/
+unzip $path/cinnamon.zip -d $HOME/.local/share/
 mkdir -p $HOME/.local/share/plank/themes/
-unzip plank_theme.zip -d $HOME/.local/share/plank/themes/
+unzip $path/plank_theme.zip -d $HOME/.local/share/plank/themes/
 cp /usr/share/applications/plank.desktop $HOME/.config/autostart/
-dconf load / < bigsur-configs
-gsettings set org.cinnamon.desktop.background picture-uri file://$HOME/Pictures/Wallpapers/'Appearance Dark.jpg'
+dconf load / < $path/bigsur-configs
+gsettings set org.cinnamon.desktop.background picture-uri file://$HOME/Pictures/Wallpapers/Appearance.jpg
 clear
 
 echo 'Log out and Log in for full theme effect...'

@@ -70,9 +70,50 @@ showUbuntuMenu(){
 # Linux Mint 21.3 Cinnamon Menu
 showMint213CMenu(){
     clear
-    echo 'Work In Progress ...'
-    sleep 2
-    showMintMenu
+    echo "--------------------------------------"
+    echo "|    Linux Mint 21.3 - Cinnamon DE    |"
+    echo "--------------------------------------"
+    echo "Choose the theme that you want to apply : "
+    echo '1. MacOS BigSur'
+    echo '2. Return to Main Menu'
+    echo -n "Enter Option :"
+    read option
+    case $option in
+    1)
+        showBigSurMenu
+        ;;
+    2)
+        showMainMenu
+        ;;
+    esac
+}
+
+# MacOS BigSur theme for LM Menu
+showBigSurMenu(){
+    clear
+    Path="src/Cinnamon-BigSur"
+    echo "--------------------------------------"
+    echo "|    Linux Mint 21.3 - Cinnamon DE   |"
+    echo "|------------------------------------|"
+    echo "|    Selected Theme : MacOS BigSur   |"
+    echo "--------------------------------------"
+    echo "1. Apply Theme"
+    echo "2. Preview Theme"
+    echo "3. Return To Previous Menu"
+    echo -n "Enter Option: "
+    read option
+    case $option in
+    1)
+        bash $Path/install_bigsur.sh
+        ;;
+    2)
+        nemo $Path/Screenshots/
+        showBigSurMenu
+        ;;
+    3)
+        showMint213CMenu
+        ;;
+    esac
 }
 
 # Linux Mint Menu
