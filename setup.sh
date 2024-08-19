@@ -1,82 +1,30 @@
 #!/bin/bash
 
-# Ubuntu 22.04 Menu
-showUbuntu22LTSGMenu(){
+# Linux Mint Menu
+showMintMenu(){
     clear
     echo "--------------------------------------"
-    echo "|   Ubuntu 22.04 LTS - GNOME 42 DE   |"
+    echo "|             Linux Mint             |"
     echo "--------------------------------------"
-    echo "Choose The Theme That You Want To Apply : "
-    echo "1. GTK Graphite"
-    echo "2. My P Theme"
-    echo "3. Windows 11"
-    echo "4. Windows Everforest Dark"
-    echo "5. Return To Previous Menu"
-    echo -n "Enter Option: "
+    echo '1. 21.3 - Cinnamon Edition'
+    echo '2. Return To Main Menu'
+    echo -n 'Enter Option: '
     read option
+
     case $option in
         1)
-            showGGThemeMenu
+            showMint213CMenu
             ;;
         2)
-            showPThemeMenu
-            ;;
-        3)
-            showWinEThemeMenu
-            ;;
-        4)
-            showWinEDThemeMenu
-            ;;
-        5)
-            showUbuntuMenu
-            ;;
-        *)
-            echo "No Option Selected !"
-            echo "Press Enter To Continue ..."
-            read
-            showUbuntu22LTSGMenu
-            ;;
-    esac
-}
-
-# Ubuntu 24.04
-showUbuntu24LTSGMenu(){
-    clear
-    echo 'Themes Will Be Available Soon For Ubuntu 24.04...'
-    sleep 2
-    showUbuntuMenu
-}
-
-# Ubuntu Menu
-showUbuntuMenu(){
-    clear
-    echo "--------------------------------------"
-    echo "|                Ubuntu              |"
-    echo "--------------------------------------"
-    echo '1. Ubuntu 22.04 LTS - GNOME 42'
-    echo '2. Ubuntu 24.04 LTS - GNOME 46'
-    echo '3. Return To Main Menu'
-    echo -n "Enter Option: "
-    read option
-
-    case $option in 
-        1)
-            showUbuntu22LTSGMenu
-            ;;
-        2)
-            showUbuntu24LTSGMenu
-            ;;
-        3)
             showMainMenu
             ;;
         *)
             echo "No Option Selected !"
             echo "Press Enter To Continue ..."
             read
-            showUbuntuMenu
+            showMintMenu
             ;;
     esac
- 
 }
 
 # Linux Mint 21.3 Cinnamon Menu
@@ -140,61 +88,73 @@ showBigSurMenu(){
     esac
 }
 
-# Linux Mint Menu
-showMintMenu(){
+# Ubuntu Menu
+showUbuntuMenu(){
     clear
     echo "--------------------------------------"
-    echo "|             Linux Mint             |"
+    echo "|                Ubuntu              |"
     echo "--------------------------------------"
-    echo '1. 21.3 - Cinnamon Edition'
-    echo '2. Return To Main Menu'
-    echo -n 'Enter Option: '
-    read option
-
-    case $option in
-        1)
-            showMint213CMenu
-            ;;
-        2)
-            showMainMenu
-            ;;
-        *)
-            echo "No Option Selected !"
-            echo "Press Enter To Continue ..."
-            read
-            showMintMenu
-            ;;
-    esac
-}
-
-# Main Menu
-showMainMenu(){
-    clear
-    echo "--------------------------------------"
-    echo "|   Welcome to the Theme Installer   |"
-    echo "--------------------------------------"
-    echo 'Choose Your Linux Distribution :'
-    echo '1. Ubuntu'
-    echo '2. Linux Mint'
-    echo "q. Quit"
+    echo '1. Ubuntu 22.04 LTS - GNOME 42'
+    echo '2. Ubuntu 24.04 LTS - GNOME 46'
+    echo '3. Return To Main Menu'
     echo -n "Enter Option: "
     read option
 
-    case $option in
+    case $option in 
         1)
-            showUbuntuMenu
+            showUbuntu22LTSGMenu
             ;;
         2)
-            showMintMenu
+            showUbuntu24LTSGMenu
             ;;
-        q)
-            exit 1
+        3)
+            showMainMenu
             ;;
         *)
             echo "No Option Selected !"
             echo "Press Enter To Continue ..."
             read
-            showMainMenu
+            showUbuntuMenu
+            ;;
+    esac
+ 
+}
+
+# Ubuntu 22.04 Menu
+showUbuntu22LTSGMenu(){
+    clear
+    echo "--------------------------------------"
+    echo "|   Ubuntu 22.04 LTS - GNOME 42 DE   |"
+    echo "--------------------------------------"
+    echo "Choose The Theme That You Want To Apply : "
+    echo "1. GTK Graphite"
+    echo "2. My P Theme"
+    echo "3. Windows 11"
+    echo "4. Windows Everforest Dark"
+    echo "5. Return To Previous Menu"
+    echo -n "Enter Option: "
+    read option
+    case $option in
+        1)
+            showGGThemeMenu
+            ;;
+        2)
+            showPThemeMenu
+            ;;
+        3)
+            showWinEThemeMenu
+            ;;
+        4)
+            showWinEDThemeMenu
+            ;;
+        5)
+            showUbuntuMenu
+            ;;
+        *)
+            echo "No Option Selected !"
+            echo "Press Enter To Continue ..."
+            read
+            showUbuntu22LTSGMenu
             ;;
     esac
 }
@@ -333,6 +293,46 @@ showWinEDThemeMenu(){
             echo "Press Enter To Continue ..."
             read
             showWinEThemeMenu
+            ;;
+    esac
+}
+
+# Ubuntu 24.04
+showUbuntu24LTSGMenu(){
+    clear
+    echo 'Themes Will Be Available Soon For Ubuntu 24.04...'
+    sleep 2
+    showUbuntuMenu
+}
+
+# Main Menu
+showMainMenu(){
+    clear
+    echo "--------------------------------------"
+    echo "|   Welcome to the Theme Installer   |"
+    echo "--------------------------------------"
+    echo 'Choose Your Linux Distribution :'
+    echo '1. Ubuntu'
+    echo '2. Linux Mint'
+    echo "q. Quit"
+    echo -n "Enter Option: "
+    read option
+
+    case $option in
+        1)
+            showUbuntuMenu
+            ;;
+        2)
+            showMintMenu
+            ;;
+        q)
+            exit 1
+            ;;
+        *)
+            echo "No Option Selected !"
+            echo "Press Enter To Continue ..."
+            read
+            showMainMenu
             ;;
     esac
 }
