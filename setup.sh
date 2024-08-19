@@ -254,6 +254,7 @@ showPThemeMenu(){
             ;;
         2)
             nautilus $Path/Screenshots/
+            showPThemeMenu
             ;;
         3)
             showUbuntu22LTSGMenu
@@ -288,6 +289,7 @@ showWinEThemeMenu(){
 
         2)
             nautilus $Path/Screenshots/
+            showWinEThemeMenu
             ;;
         3)
             showUbuntu22LTSGMenu
@@ -321,6 +323,7 @@ showWinEDThemeMenu(){
             ;;
         2)
             nautilus $Path/Screenshots/
+            showWinEDThemeMenu
             ;;
         3)
             showUbuntu22LTSGMenu
