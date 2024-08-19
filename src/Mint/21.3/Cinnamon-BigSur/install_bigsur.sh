@@ -1,7 +1,7 @@
 #!/bin/bash
 
 clear
-path=$(pwd)/src/Cinnamon-BigSur
+path=$(pwd)/src/Mint/21.3/Cinnamon-BigSur
 
 
 echo 'Updating the Database...'

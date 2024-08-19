@@ -1,6 +1,6 @@
 #!/bin/bash
 
-path=$(pwd)/Ubuntu-GNOME-42/GTK-Graphite
+path=$(pwd)/src/Ubuntu/22.04/GNOME-42/GTK-Graphite
 
 
 echo "Updating database..."

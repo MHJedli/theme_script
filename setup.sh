@@ -91,7 +91,7 @@ showMint213CMenu(){
 # MacOS BigSur theme for LM Menu
 showBigSurMenu(){
     clear
-    Path="src/Cinnamon-BigSur"
+    Path="src/Mint/21.3/Cinnamon-BigSur"
     echo "--------------------------------------"
     echo "|    Linux Mint 21.3 - Cinnamon DE   |"
     echo "|------------------------------------|"
@@ -163,7 +163,7 @@ showMainMenu(){
 # GTK Graphite Menu
 showGGThemeMenu(){
     clear
-    Path="src/Ubuntu-GNOME-42/GTK-Graphite"
+    Path="src/Ubuntu/22.04/GNOME-42/GTK-Graphite"
     echo "--------------------------------------"
     echo "|   Ubuntu 22.04 LTS - GNOME 42 DE   |"
     echo "|------------------------------------|"
@@ -197,7 +197,7 @@ showGGThemeMenu(){
 # My Personal Theme Menu
 showPThemeMenu(){
     clear
-    Path="src/Ubuntu-GNOME-42/My-Theme"
+    Path="src/Ubuntu/22.04/GNOME-42/My-Theme"
     echo "--------------------------------------"
     echo "|   Ubuntu 22.04 LTS - GNOME 42 DE   |"
     echo "|------------------------------------|"
@@ -229,7 +229,7 @@ showPThemeMenu(){
 # Windows 11 Theme Menu
 showWinEThemeMenu(){
     clear
-    Path="src/Ubuntu-GNOME-42/Windows-11"
+    Path="src/Ubuntu/22.04/GNOME-42/Windows-11"
     echo "--------------------------------------"
     echo "|   Ubuntu 22.04 LTS - GNOME 42 DE   |"
     echo "|------------------------------------|"
@@ -263,7 +263,7 @@ showWinEThemeMenu(){
 # Windows Everforest Theme Menu
 showWinEDThemeMenu(){
     clear
-    Path="src/Ubuntu-GNOME-42/Windows-Everforest-Dark"
+    Path="src/Ubuntu/22.04/GNOME-42/Windows-Everforest-Dark"
     echo "------------------------------------------------"
     echo "|        Ubuntu 22.04 LTS - GNOME 42 DE        |"
     echo "|----------------------------------------------|"

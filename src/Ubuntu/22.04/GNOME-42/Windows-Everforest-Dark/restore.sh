@@ -1,7 +1,8 @@
 #!/bin/bash
-path=$(pwd)/Ubuntu-GNOME-42/My-Theme
 
-echo "Updating database..."
+path=$(pwd)/src/Ubuntu/22.04/GNOME-42/Windows-Everforest-Dark
+
+echo "Updating the database..."
 sleep 1
 sudo apt update
 clear
@@ -17,7 +18,7 @@ tar --extract --file $path/my-icons.tar.gz -C ~/ --strip-components=2
 tar --extract --file $path/my-themes.tar.gz -C ~/ --strip-components=2
 clear
 
-echo "Installing The Extensions..."
+echo "Installing the extensions..."
 sleep 1
 tar --extract --file $path/my-extensions.tar.gz -C ~/ --strip-components=2
 clear
