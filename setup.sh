@@ -175,7 +175,7 @@ showGGThemeMenu(){
     read option
     case $option in
         1)
-            bash $Path/restore.sh
+            bash $Path/install_GG.sh
             ;;
         2)
             nautilus $Path/Screenshots/
@@ -210,7 +210,7 @@ showPThemeMenu(){
     read option
     case $option in
         1)
-            bash $Path/restore.sh
+            bash $Path/install_MP.sh
             ;;
         2)
             nautilus $Path/Screenshots/
@@ -244,7 +244,7 @@ showWinEThemeMenu(){
     read option
     case $option in
         1)
-            bash $Path/restore.sh
+            bash $Path/install_Win11.sh
             ;;
 
         2)
@@ -275,11 +275,10 @@ showWinEDThemeMenu(){
     echo "1. Apply Theme"
     echo "2. Preview Theme"
     echo "3. Return To Previous Menu"
-    echo -n "Enter Option: "
     read option
     case $option in
         1)
-            bash $Path/restore.sh
+            bash $Path/install_WinED.sh
             ;;
         2)
             nautilus $Path/Screenshots/
@@ -292,7 +291,7 @@ showWinEDThemeMenu(){
             echo "No Option Selected !"
             echo "Press Enter To Continue ..."
             read
-            showWinEThemeMenu
+            showWinEDThemeMenu
             ;;
     esac
 }
