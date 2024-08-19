@@ -30,6 +30,12 @@ showUbuntu22LTSGMenu(){
         5)
             showUbuntuMenu
             ;;
+        *)
+            echo "No Option Selected !"
+            echo "Press Enter to Continue ..."
+            read
+            showUbuntu22LTSGMenu
+            ;;
     esac
 }
 
@@ -63,6 +69,12 @@ showUbuntuMenu(){
         3)
             showMainMenu
             ;;
+        *)
+            echo "No Option Selected !"
+            echo "Press Enter to Continue ..."
+            read
+            showUbuntuMenu
+            ;;
     esac
  
 }
@@ -85,6 +97,12 @@ showMint213CMenu(){
     2)
         showMainMenu
         ;;
+    *)
+            echo "No Option Selected !"
+            echo "Press Enter to Continue ..."
+            read
+            showMint213CMenu
+            ;;
     esac
 }
 
@@ -113,6 +131,12 @@ showBigSurMenu(){
     3)
         showMint213CMenu
         ;;
+    *)
+            echo "No Option Selected !"
+            echo "Press Enter to Continue ..."
+            read
+            showBigSurMenu
+            ;;
     esac
 }
 
@@ -134,6 +158,12 @@ showMintMenu(){
         2)
             showMainMenu
             ;;
+        *)
+            echo "No Option Selected !"
+            echo "Press Enter to Continue ..."
+            read
+            showMintMenu
+            ;;
     esac
 }
 
@@ -146,7 +176,7 @@ showMainMenu(){
     echo 'Choose Your Linux Distribution :'
     echo '1. Ubuntu'
     echo '2. Linux Mint'
-    echo "<CTRL+C>. Quit"
+    echo "q. Quit"
     echo -n "Enter Option: "
     read option
 
@@ -156,6 +186,15 @@ showMainMenu(){
             ;;
         2)
             showMintMenu
+            ;;
+        q)
+            exit 1
+            ;;
+        *)
+            echo "No Option Selected !"
+            echo "Press Enter to Continue ..."
+            read
+            showMainMenu
             ;;
     esac
 }
@@ -187,6 +226,7 @@ showGGThemeMenu(){
             ;;
         *)
             echo "No Option Selected !"
+            echo "Press Enter to Continue ..."
             read
             showGGThemeMenu
             ;;
@@ -220,6 +260,7 @@ showPThemeMenu(){
             ;;
         *)
             echo "No Option Selected !"
+            echo "Press Enter to Continue ..."
             read
             showPThemeMenu
             ;;
@@ -286,6 +327,7 @@ showWinEDThemeMenu(){
             ;;
         *)
             echo "No Option Selected !"
+            echo "Press Enter to Continue ..."
             read
             showWinEThemeMenu
             ;;
