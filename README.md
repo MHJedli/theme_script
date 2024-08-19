@@ -25,7 +25,6 @@ or
 </pre>
 
 # NOTE :
-*   For now, Only Ubuntu 22.04 GNOME themes are ready to be used
 *   The script is still improving by time. So you can expect new themes and/or new features in the future.
 
 
