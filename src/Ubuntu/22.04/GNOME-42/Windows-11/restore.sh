@@ -34,10 +34,12 @@ cp -r $path/Background/* ~/Pictures/Wallpapers
 gsettings set org.gnome.desktop.background picture-uri file://$HOME/Pictures/Wallpapers/windows-11-blue-stock-white-background-light-official-3840x2400-5616.jpg
 clear
 
-echo -n "You want to Log Out Now To Fully Apply The Theme ? (Y/n) : "
-read r
-if [[ "$r" == "Y" || "$r" == "y" ]]; then
-    echo "Logging out in 3 seconds ..."
+echo -n "Do you want to log out now to fully apply the theme? (Y/n): "
+read -r r
+if [[ "$r" == "Y" || "$r" == "y" || "$r" == "" ]]; then
+    echo "Logging out in 3 seconds..."
     sleep 3
     gnome-session-quit --no-prompt
+else
+    echo "Please log out manually to apply the changes."
 fi
