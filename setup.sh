@@ -6,12 +6,12 @@ showUbuntu22LTSGMenu(){
     echo "--------------------------------------"
     echo "|   Ubuntu 22.04 LTS - GNOME 42 DE   |"
     echo "--------------------------------------"
-    echo "Choose the theme that you want to apply : "
+    echo "Choose The Theme That You Want To Apply : "
     echo "1. GTK Graphite"
     echo "2. My P Theme"
     echo "3. Windows 11"
     echo "4. Windows Everforest Dark"
-    echo "5. Return to Previous Menu"
+    echo "5. Return To Previous Menu"
     echo -n "Enter Option: "
     read option
     case $option in
@@ -32,7 +32,7 @@ showUbuntu22LTSGMenu(){
             ;;
         *)
             echo "No Option Selected !"
-            echo "Press Enter to Continue ..."
+            echo "Press Enter To Continue ..."
             read
             showUbuntu22LTSGMenu
             ;;
@@ -42,7 +42,7 @@ showUbuntu22LTSGMenu(){
 # Ubuntu 24.04
 showUbuntu24LTSGMenu(){
     clear
-    echo 'Themes will be available soon for Ubuntu 24.04...'
+    echo 'Themes Will Be Available Soon For Ubuntu 24.04...'
     sleep 2
     showUbuntuMenu
 }
@@ -55,7 +55,7 @@ showUbuntuMenu(){
     echo "--------------------------------------"
     echo '1. Ubuntu 22.04 LTS - GNOME 42'
     echo '2. Ubuntu 24.04 LTS - GNOME 46'
-    echo '3. Return to Main Menu'
+    echo '3. Return To Main Menu'
     echo -n "Enter Option: "
     read option
 
@@ -71,7 +71,7 @@ showUbuntuMenu(){
             ;;
         *)
             echo "No Option Selected !"
-            echo "Press Enter to Continue ..."
+            echo "Press Enter To Continue ..."
             read
             showUbuntuMenu
             ;;
@@ -85,9 +85,9 @@ showMint213CMenu(){
     echo "--------------------------------------"
     echo "|    Linux Mint 21.3 - Cinnamon DE    |"
     echo "--------------------------------------"
-    echo "Choose the theme that you want to apply : "
+    echo "Choose The Theme That You Want To Apply : "
     echo '1. MacOS BigSur'
-    echo '2. Return to Main Menu'
+    echo '2. Return To Main Menu'
     echo -n "Enter Option :"
     read option
     case $option in
@@ -99,7 +99,7 @@ showMint213CMenu(){
         ;;
     *)
             echo "No Option Selected !"
-            echo "Press Enter to Continue ..."
+            echo "Press Enter To Continue ..."
             read
             showMint213CMenu
             ;;
@@ -133,7 +133,7 @@ showBigSurMenu(){
         ;;
     *)
             echo "No Option Selected !"
-            echo "Press Enter to Continue ..."
+            echo "Press Enter To Continue ..."
             read
             showBigSurMenu
             ;;
@@ -147,7 +147,7 @@ showMintMenu(){
     echo "|             Linux Mint             |"
     echo "--------------------------------------"
     echo '1. 21.3 - Cinnamon Edition'
-    echo '2. Return to Main Menu'
+    echo '2. Return To Main Menu'
     echo -n 'Enter Option: '
     read option
 
@@ -160,7 +160,7 @@ showMintMenu(){
             ;;
         *)
             echo "No Option Selected !"
-            echo "Press Enter to Continue ..."
+            echo "Press Enter To Continue ..."
             read
             showMintMenu
             ;;
@@ -192,7 +192,7 @@ showMainMenu(){
             ;;
         *)
             echo "No Option Selected !"
-            echo "Press Enter to Continue ..."
+            echo "Press Enter To Continue ..."
             read
             showMainMenu
             ;;
@@ -226,7 +226,7 @@ showGGThemeMenu(){
             ;;
         *)
             echo "No Option Selected !"
-            echo "Press Enter to Continue ..."
+            echo "Press Enter To Continue ..."
             read
             showGGThemeMenu
             ;;
@@ -261,7 +261,7 @@ showPThemeMenu(){
             ;;
         *)
             echo "No Option Selected !"
-            echo "Press Enter to Continue ..."
+            echo "Press Enter To Continue ..."
             read
             showPThemeMenu
             ;;
@@ -296,7 +296,7 @@ showWinEThemeMenu(){
             ;;
         *)
             echo "No Option Selected !"
-            echo "Press Enter to Continue ..."
+            echo "Press Enter To Continue ..."
             read
             showWinEThemeMenu
             ;;
@@ -330,7 +330,7 @@ showWinEDThemeMenu(){
             ;;
         *)
             echo "No Option Selected !"
-            echo "Press Enter to Continue ..."
+            echo "Press Enter To Continue ..."
             read
             showWinEThemeMenu
             ;;
