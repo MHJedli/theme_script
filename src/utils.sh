@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Theme Paths
+# Used Associative Arrays to declare Theme Paths for easier use
 declare -A themePaths=(
     ["BigSur"]="src/Mint/21.3/Cinnamon-BigSur"
     ["GTKGraphite"]="src/Ubuntu/22.04/GNOME-42/GTK-Graphite"
@@ -17,6 +17,9 @@ invalidOption() {
     "$1"
 }
 
+# Function that prints the Menu of different versions of a selected distro
+# Usage :
+# showMenu "<Title>" "<Option_1>" "<Option_2>" "<Option_3>" ...
 showMenu() {
     local title="$1"
     shift
@@ -32,6 +35,10 @@ showMenu() {
     echo -n "Enter Option: "
 }
 
+
+# Function that prints the menu of a selected theme
+# Usage :
+# themeMenu "Selected Theme : <Theme Name>" "${themePaths["<Theme_Key>"]}/<Theme_Script>.sh" "${themePaths["<Theme_Key>"]}/Screenshots/" "<File_Manager>" "<Current_Menu_Name>"
 themeMenu() {
     local theme=$1
     local installScript=$2
