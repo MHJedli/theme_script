@@ -40,9 +40,9 @@ themeMenu() {
     local previousMenu=$5
     while true; do
         clear
-        echo "--------------------------------------"
-        echo "|   Selected Theme : $theme   |"
-        echo "--------------------------------------"
+        echo "-------------------------------------------------"
+        echo "| $theme   |"
+        echo "-------------------------------------------------"
         echo "1. Apply Theme"
         echo "2. Preview Theme"
         echo "3. Return To Previous Menu"
