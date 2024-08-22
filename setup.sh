@@ -5,7 +5,11 @@ source src/utils.sh
 
 # Linux Mint Menu
 showMintMenu(){
-    showMenu "          Linux Mint              " "21.3 - Cinnamon Edition" "Return To Main Menu"
+    showMenu \
+    "          Linux Mint              " \
+    "21.3 - Cinnamon Edition" \
+    "Return To Main Menu"
+
     read option
     case $option in
         1)
@@ -22,7 +26,11 @@ showMintMenu(){
 
 # Linux Mint 21.3 Cinnamon Menu
 showMint213CMenu(){
-    showMenu " Linux Mint 21.3 - Cinnamon DE    " "MacOS BigSur" "Return To Main Menu"
+    showMenu \
+    " Linux Mint 21.3 - Cinnamon DE    "\
+    "MacOS BigSur" \
+    "Return To Main Menu"
+
     read option
     case $option in
     1)
@@ -40,12 +48,22 @@ showMint213CMenu(){
 
 # MacOS BigSur theme for LM Menu
 showBigSurMenu(){
-    themeMenu "Selected Theme : MacOS BigSur " "${themePaths["BigSur"]}/install_bigsur.sh" "${themePaths["BigSur"]}/Screenshots/" "nemo" "showMint213CMenu"
+
+    themeMenu "         Selected Theme : MacOS BigSur     " \
+    "${themePaths["BigSur"]}/install_bigsur.sh" \
+    "${themePaths["BigSur"]}/Screenshots/" \
+    "nemo" \
+    "showMint213CMenu"
 }
 
 # Ubuntu Menu
 showUbuntuMenu(){
-    showMenu "               Ubuntu             " "22.04 LTS - GNOME 42" "24.04 LTS - GNOME 46" "Return To Main Menu"
+    showMenu \
+    "               Ubuntu             " \
+    "22.04 LTS - GNOME 42" \
+    "24.04 LTS - GNOME 46" \
+    "Return To Main Menu"
+
     read option
     case $option in 
         1)
@@ -66,7 +84,14 @@ showUbuntuMenu(){
 
 # Ubuntu 22.04 Menu
 showUbuntu22LTSGMenu(){
-    showMenu " Ubuntu 22.04 LTS - GNOME 42 DE   " "GTK Graphite" "My P Theme" "Windows 11" "Windows Everforest Dark" "Return To Previous Menu"
+    showMenu \
+    " Ubuntu 22.04 LTS - GNOME 42 DE   " \
+    "GTK Graphite" \
+    "My P Theme" \
+    "Windows 11" \
+    "Windows Everforest Dark" \
+    "Return To Previous Menu"
+
     read option
     case $option in
         1)
@@ -92,22 +117,47 @@ showUbuntu22LTSGMenu(){
 
 # GTK Graphite Menu
 showGGThemeMenu(){
-    themeMenu "        Selected Theme : GTK Graphite      " "${themePaths["GTKGraphite"]}/install_GG.sh" "${themePaths["GTKGraphite"]}/Screenshots/" "nautilus" "showUbuntu22LTSGMenu"
+
+    themeMenu \
+    "        Selected Theme : GTK Graphite      " \
+    "${themePaths["GTKGraphite"]}/install_GG.sh" \
+    "${themePaths["GTKGraphite"]}/Screenshots/" \
+    "nautilus" "showUbuntu22LTSGMenu"
 }
 
 # My Personal Theme Menu
 showPThemeMenu(){
-    themeMenu "         Selected Theme : My P Theme       " "${themePaths["PTheme"]}/install_MP.sh" "${themePaths["PTheme"]}/Screenshots/" "nautilus" "showUbuntu22LTSGMenu"
+
+    themeMenu \
+    "         Selected Theme : My P Theme       " \
+    "${themePaths["PTheme"]}/install_MP.sh" \
+    "${themePaths["PTheme"]}/Screenshots/" \
+    "nautilus" "showUbuntu22LTSGMenu"
+
 }
 
 # Windows 11 Theme Menu
 showWinEThemeMenu(){
-    themeMenu "         Selected Theme : Windows 11       " "${themePaths["Win11"]}/install_Win11.sh" "${themePaths["Win11"]}/Screenshots/" "nautilus" "showUbuntu22LTSGMenu"
+
+    themeMenu \
+    "         Selected Theme : Windows 11       " \
+    "${themePaths["Win11"]}/install_Win11.sh" \
+    "${themePaths["Win11"]}/Screenshots/" \
+    "nautilus" \
+    "showUbuntu22LTSGMenu"
+
 }
 
 # Windows Everforest Theme Menu
 showWinEDThemeMenu(){
-    themeMenu "   Selected Theme : Windows Everforest Dark" "${themePaths["WinEverforestDark"]}/install_Win11.sh" "${themePaths["WinEverforestDark"]}/Screenshots/" "nautilus" "showUbuntu22LTSGMenu"
+
+    themeMenu \
+    "   Selected Theme : Windows Everforest Dark" \
+    "${themePaths["WinEverforestDark"]}/install_Win11.sh" \
+    "${themePaths["WinEverforestDark"]}/Screenshots/" \
+    "nautilus" \
+    "showUbuntu22LTSGMenu"
+
 }
 
 # Ubuntu 24.04
