@@ -1,7 +1,8 @@
 #!/bin/bash
 
 path=$(pwd)/src/Ubuntu/22.04/GNOME-42/GTK-Graphite
-
+source $(pwd)/src/utils.sh
+LOG_FILE=$(pwd)/src/logfile.log
 
 echo "Updating database..."
 sleep 1
@@ -49,12 +50,14 @@ cp -r $path/Wallpapers ~/Pictures
 gsettings set org.gnome.desktop.background picture-uri file://$HOME/Pictures/Wallpapers/wave-Dark-nord-ubuntu.png
 clear
 
-echo -n "Do you want to log out now to fully apply the theme? (Y/n): "
-read -r r
-if [[ "$r" == "Y" || "$r" == "y" || "$r" == "" ]]; then
-    echo "Logging out in 3 seconds..."
-    sleep 3
-    gnome-session-quit --no-prompt
-else
-    echo "Please log out manually to apply the changes."
-fi
+# echo -n "Do you want to log out now to fully apply the theme? (Y/n): "
+# read -r r
+# if [[ "$r" == "Y" || "$r" == "y" || "$r" == "" ]]; then
+#     echo "Logging out in 3 seconds..."
+#     sleep 3
+#     gnome-session-quit --no-prompt
+# else
+#     echo "Please log out manually to apply the changes."
+# fi
+
+signOut "gnome-session-quit --no-prompt"

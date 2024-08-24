@@ -1,9 +1,15 @@
 #!/bin/bash
 
-clear
 path=$(pwd)/src/Mint/21.3/Cinnamon-BigSur
+source $(pwd)/src/utils.sh
+LOG_FILE=$(pwd)/src/logfile.log
+clear
 
 
+echo "Continue script execution at $(date)" >> "$LOG_FILE"
+
+
+# log_message "INFO" "Updating the DB.....oyoyoyoyoyoy"
 echo 'Updating the Database...'
 sleep 1
 sudo apt update
@@ -52,4 +58,4 @@ dconf load / < $path/bigsur-configs
 gsettings set org.cinnamon.desktop.background picture-uri file://$HOME/Pictures/Wallpapers/Appearance.jpg
 clear
 
-echo 'Log out and Log in for full theme effect...'
+signOut "cinnamon-session-quit --logout --force"
