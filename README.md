@@ -17,11 +17,9 @@ A simple idea of the script :
 
 To run the script : 
 <pre>
-  $ bash setup.sh
-</pre>
-or
-<pre>
-  $ ./setup.sh
+  $ git clone https://github.com/MHJedli/theme_script.git
+  $ cd theme_script/
+  $ bash setup.sh or ./setup.sh
 </pre>
 
 # NOTE :
