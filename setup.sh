@@ -236,5 +236,4 @@ showMainMenu(){
 }
 
 # Main Script
-signOut "cinnamon-session-quit --logout --force"
-# showMainMenu
+showMainMenu
