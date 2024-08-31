@@ -3,6 +3,14 @@
 # External Functions
 source src/utils.sh
 
+# Logging setup
+
+# LOG File
+LOG_FILE=src/logfile.log
+
+# Initialize log file
+echo "Starting script execution at $(date)" > "$LOG_FILE"
+
 # Linux Mint Menu
 showMintMenu(){
     log_message "INFO" "Displaying Linux Mint Menu"
@@ -143,7 +151,6 @@ showUbuntu22LTSGMenu(){
 
 # GTK Graphite Menu
 showGGThemeMenu(){
-    # log_message "INFO" "Displaying GTK Graphite Theme Menu"
 
     themeMenu \
     "        Selected Theme : GTK Graphite      " \
@@ -154,19 +161,16 @@ showGGThemeMenu(){
 
 # My Personal Theme Menu
 showPThemeMenu(){
-    # log_message "INFO" "Displaying My Personal Theme Menu"
 
     themeMenu \
     "         Selected Theme : My P Theme       " \
     "${themePaths["PTheme"]}/install_MP.sh" \
     "${themePaths["PTheme"]}/Screenshots/" \
     "nautilus" "showUbuntu22LTSGMenu"
-
 }
 
 # Windows 11 Theme Menu
 showWinEThemeMenu(){
-    # log_message "INFO" "Displaying Windows 11 Theme Menu"
 
     themeMenu \
     "         Selected Theme : Windows 11       " \
@@ -174,12 +178,10 @@ showWinEThemeMenu(){
     "${themePaths["Win11"]}/Screenshots/" \
     "nautilus" \
     "showUbuntu22LTSGMenu"
-
 }
 
 # Windows Everforest Theme Menu
 showWinEDThemeMenu(){
-    # log_message "INFO" "Displaying Windows Everforest Theme Menu"
 
     themeMenu \
     "   Selected Theme : Windows Everforest Dark" \
@@ -187,7 +189,6 @@ showWinEDThemeMenu(){
     "${themePaths["WinEverforestDark"]}/Screenshots/" \
     "nautilus" \
     "showUbuntu22LTSGMenu"
-
 }
 
 # Ubuntu 24.04
@@ -235,4 +236,5 @@ showMainMenu(){
 }
 
 # Main Script
-showMainMenu
+signOut "cinnamon-session-quit --logout --force"
+# showMainMenu
