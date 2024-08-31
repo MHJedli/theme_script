@@ -1,13 +1,11 @@
 #!/bin/bash
 
-# LOG File
-LOG_FILE=src/logfile.log
 
-# Initialize log file
-echo "Starting script execution at $(date)" > "$LOG_FILE"
-
-# Function that log every step taken in a log file
-# Exemple of Usage :
+# Function that log every step taken for easier debugging
+# Parameters :
+# $1 : Log Level [INFO, WARN, ERROR]
+# $@ : Log Message
+# Exemple :
 # log_message "INFO" "Script execution started"
 # log_message "ERROR" "An error occurred in the script"
 log_message() {
@@ -31,12 +29,17 @@ invalidOption() {
     echo "No Option Selected !"
     echo "Press Enter To Continue ..."
     read
+    if [ $# -gt 0 ]; then
     "$1"
+    fi
 }
 
 # Function that prints the Menu of different versions of a selected distro
-# Usage :
-# showMenu "<Title>" "<Option_1>" "<Option_2>" "<Option_3>" ...
+# Parameters : 
+# $1 : Menu Title
+# $@ : Menu Options
+# Example : 
+# showMenu "Title" "Option 1" "Option 2" ...
 showMenu() {
     local title="$1"
     shift
@@ -54,6 +57,12 @@ showMenu() {
 
 
 # Function that prints the menu of a selected theme
+# Parameters :
+# $1 : Title
+# $2 : Script.sh
+# $3 : Screenshot Directory
+# $4 : File Manager
+# $5 : Previous Menu to the Current one
 # Usage :
 # themeMenu "Selected Theme : <Theme Name>" "${themePaths["<Theme_Key>"]}/<Theme_Script>.sh" "${themePaths["<Theme_Key>"]}/Screenshots/" "<File_Manager>" "<Current_Menu_Name>"
 themeMenu() {
@@ -77,11 +86,11 @@ themeMenu() {
         log_message "INFO" "User selected option $option in the $trimmedTheme"
         case $option in
             1)
-                log_message "INFO" "User chose to Apply the Theme" 
+                log_message "INFO" "User chose to Apply the $trimmedTheme" 
                 bash "$installScript" 
                 ;;
             2)
-                log_message "INFO" "User chose to Preview the Theme"
+                log_message "INFO" "User chose to Preview the $trimmedTheme"
                 $fileManager "$screenshotsDir" 
                 ;;
             3)
@@ -98,16 +107,23 @@ themeMenu() {
     done
 }
 
+# Function that gives the User the choice to sign out from the current session right away or not
+# Parameter :
+# $1 : DE sign out command
 signOut(){
     local signOutCommand=$1
-    echo -n "Do you want to log out now to fully apply the theme? (Y/n): "
-    read -r r
-    if [[ "$r" == "Y" || "$r" == "y" || "$r" == "" ]]; then
-        echo "Logging out in 3 seconds..."
-        sleep 3
-        "$signOutCommand"
-        cinnamon-session-quit --logout --force
-    else
-        echo "Please log out manually to apply the changes."
-    fi
+    while true; do
+        echo -n "Do you want to log out now to fully apply the theme? (Y/n): "
+        read -r r
+        if [[ "$r" == "Y" || "$r" == "y" || "$r" == "" ]]; then
+            echo "Logging out in 3 seconds..."
+            sleep 3
+            "$signOutCommand"
+        elif [[ "$r" == "n" || "$r" == "N" ]]; then
+            echo "Please log out manually to apply the changes."
+            return
+        else
+            invalidOption
+        fi
+    done
 }
