@@ -41,8 +41,9 @@ showMintMenu(){
 showMint213CMenu(){
     log_message "INFO" "Displaying Linux Mint 21.3 - Cinnamon DE Menu"
     showMenu \
-    " Linux Mint 21.3 - Cinnamon DE    "\
+    " Linux Mint 21.3 - Cinnamon DE    " \
     "MacOS BigSur" \
+    "Windows 7" \
     "Return To Main Menu"
 
     read option
@@ -53,6 +54,10 @@ showMint213CMenu(){
         showBigSurMenu
         ;;
     2)
+        log_message "INFO" "User chose Windows 7"
+        showWindows7Menu
+        ;;
+    3)
         log_message "INFO" "User chose to return to Main Menu"
         showMainMenu
         ;;
@@ -63,6 +68,17 @@ showMint213CMenu(){
     esac
 }
 
+# Windows 7 theme for LM Menu
+showWindows7Menu(){
+
+    log_message "INFO" "Displaying Windows 7 Menu"
+
+    themeMenu "         Selected Theme : Windows 7        " \
+    "${themePaths["Win7"]}/install_windows7.sh" \
+    "${themePaths["Win7"]}/Screenshots/" \
+    "nemo" \
+    "showMint213CMenu"
+}
 
 # MacOS BigSur theme for LM Menu
 showBigSurMenu(){
