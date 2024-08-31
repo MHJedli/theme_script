@@ -8,8 +8,6 @@ clear
 
 echo "Continue script execution at $(date)" >> "$LOG_FILE"
 
-
-# log_message "INFO" "Updating the DB.....oyoyoyoyoyoy"
 echo 'Updating the Database...'
 sleep 1
 sudo apt update
