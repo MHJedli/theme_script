@@ -18,6 +18,7 @@ log_message() {
 # Used Associative Arrays to declare Theme Paths for easier use
 declare -A themePaths=(
     ["BigSur"]="src/Mint/21.3/Cinnamon-BigSur"
+    ["Win7"]="src/Mint/21.3/Windows-7"
     ["GTKGraphite"]="src/Ubuntu/22.04/GNOME-42/GTK-Graphite"
     ["PTheme"]="src/Ubuntu/22.04/GNOME-42/My-Theme"
     ["Win11"]="src/Ubuntu/22.04/GNOME-42/Windows-11"
@@ -118,7 +119,7 @@ signOut(){
         if [[ "$r" == "Y" || "$r" == "y" || "$r" == "" ]]; then
             echo "Logging out in 3 seconds..."
             sleep 3
-            "$signOutCommand"
+            $signOutCommand
         elif [[ "$r" == "n" || "$r" == "N" ]]; then
             echo "Please log out manually to apply the changes."
             return
