@@ -15,6 +15,20 @@ log_message() {
     echo "$(date '+%Y-%m-%d %H:%M:%S') [$LOG_LEVEL] $MESSAGE" >> "$LOG_FILE"
 }
 
+
+# Function that handle errors
+# Parameters :
+# $1 : Log Message
+# $? : argument that will be used with 'trap' command to catch the exit status
+handle_error() {
+    local exit_status=$?
+    local msg="$1"
+    log_message "ERROR" "$msg (Exit status: $exit_status)"
+    echo "An error occurred: $msg"
+    echo "Please check the log file at $LOG_FILE for more details."
+    exit $exit_status
+}
+
 # Used Associative Arrays to declare Theme Paths for easier use
 declare -A themePaths=(
     ["BigSur"]="src/Mint/21.3/Cinnamon-BigSur"
@@ -127,4 +141,10 @@ signOut(){
             invalidOption
         fi
     done
+}
+
+# Function to check internet connectivity
+check_internet() {
+    ping -c 1 -q google.com >&/dev/null
+    return $?
 }
