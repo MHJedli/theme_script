@@ -75,6 +75,7 @@ showWindows7Menu(){
 
     themeMenu "         Selected Theme : Windows 7        " \
     "${themePaths["Win7"]}/install_windows7.sh" \
+    "${themePaths["Win7"]}/reset_to_defaults.sh" \
     "${themePaths["Win7"]}/Screenshots/" \
     "nemo" \
     "showMint213CMenu"
@@ -86,6 +87,7 @@ showBigSurMenu(){
 
     themeMenu "         Selected Theme : MacOS BigSur     " \
     "${themePaths["BigSur"]}/install_bigsur.sh" \
+    "${themePaths["BigSur"]}/reset_to_defaults.sh" \
     "${themePaths["BigSur"]}/Screenshots/" \
     "nemo" \
     "showMint213CMenu"
@@ -171,6 +173,7 @@ showGGThemeMenu(){
     themeMenu \
     "        Selected Theme : GTK Graphite      " \
     "${themePaths["GTKGraphite"]}/install_GG.sh" \
+    "${themePaths["GTKGraphite"]}/reset_to_defaults.sh" \
     "${themePaths["GTKGraphite"]}/Screenshots/" \
     "nautilus" "showUbuntu22LTSGMenu"
 }
@@ -181,6 +184,7 @@ showPThemeMenu(){
     themeMenu \
     "         Selected Theme : My P Theme       " \
     "${themePaths["PTheme"]}/install_MP.sh" \
+    "${themePaths["PTheme"]}/reset_to_defaults.sh" \
     "${themePaths["PTheme"]}/Screenshots/" \
     "nautilus" "showUbuntu22LTSGMenu"
 }
@@ -191,6 +195,7 @@ showWinEThemeMenu(){
     themeMenu \
     "         Selected Theme : Windows 11       " \
     "${themePaths["Win11"]}/install_Win11.sh" \
+    "${themePaths["Win11"]}/reset_to_defaults.sh" \
     "${themePaths["Win11"]}/Screenshots/" \
     "nautilus" \
     "showUbuntu22LTSGMenu"
@@ -202,6 +207,7 @@ showWinEDThemeMenu(){
     themeMenu \
     "   Selected Theme : Windows Everforest Dark" \
     "${themePaths["WinEverforestDark"]}/install_Win11.sh" \
+    "${themePaths["WinEverforestDark"]}/reset_to_defaults.sh" \
     "${themePaths["WinEverforestDark"]}/Screenshots/" \
     "nautilus" \
     "showUbuntu22LTSGMenu"
