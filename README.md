@@ -1,9 +1,24 @@
 # My Theme Script :
 A TUI script that helps you install Themes according to your Linux Distribution
 <br><br>
-We Have 2 Distributions currently :
-*   Ubuntu
-*   Linux Mint
+Current Script Directory Architecture and the Available Themes in a tree representation :
+```
+.
+└── src
+    ├── Mint
+    │   └── 21.3
+    │       ├── Cinnamon-BigSur
+    │       ├── Cinnamon-Ventura
+    │       └── Windows-7
+    └── Ubuntu
+        └── 22.04
+            └── GNOME-42
+                ├── GTK-Graphite
+                ├── My-Theme
+                ├── Windows-11
+                └── Windows-Everforest-Dark
+
+```
 <br>
 A simple idea of the script :
 <br>
