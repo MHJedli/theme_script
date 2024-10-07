@@ -33,6 +33,7 @@ handle_error() {
 declare -A themePaths=(
     ["BigSur"]="src/Mint/21.3/Cinnamon-BigSur"
     ["Win7"]="src/Mint/21.3/Windows-7"
+    ["Ventura"]="src/Mint/21.3/Cinnamon-Ventura"
     ["GTKGraphite"]="src/Ubuntu/22.04/GNOME-42/GTK-Graphite"
     ["PTheme"]="src/Ubuntu/22.04/GNOME-42/My-Theme"
     ["Win11"]="src/Ubuntu/22.04/GNOME-42/Windows-11"

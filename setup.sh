@@ -43,6 +43,7 @@ showMint213CMenu(){
     showMenu \
     " Linux Mint 21.3 - Cinnamon DE    " \
     "MacOS BigSur" \
+    "Ventura" \
     "Windows 7" \
     "Return To Main Menu"
 
@@ -54,10 +55,14 @@ showMint213CMenu(){
         showBigSurMenu
         ;;
     2)
+        log_message "INFO" "User chose Ventura"
+        showVenturaMenu
+        ;;
+    3)
         log_message "INFO" "User chose Windows 7"
         showWindows7Menu
         ;;
-    3)
+    4)
         log_message "INFO" "User chose to return to Main Menu"
         showMainMenu
         ;;
@@ -91,6 +96,18 @@ showBigSurMenu(){
     "${themePaths["BigSur"]}/Screenshots/" \
     "nemo" \
     "showMint213CMenu"
+}
+
+# MacOS Ventura-like theme for LM Menu
+showVenturaMenu(){
+    log_message "INFO" "Displaying Ventura Menu"
+
+    themeMenu "         Selected Theme : Ventura     " \
+    "${themePaths["Ventura"]}/install_ventura.sh" \
+    "${themePaths["Ventura"]}/reset_to_defaults.sh" \
+    "${themePaths["Ventura"]}/Screenshots/" \
+    "nemo" \
+    "showMint213CMenu"    
 }
 
 # Ubuntu Menu
