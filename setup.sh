@@ -3,7 +3,8 @@
 # External Functions
 source src/utils.sh
 
-# Logging setup
+# System Release
+system_release=$(cat /etc/issue)
 
 # LOG File
 LOG_FILE=src/logfile.log
@@ -246,7 +247,7 @@ showMainMenu(){
     echo "--------------------------------------"
     echo "|   Welcome to the Theme Installer   |"
     echo "--------------------------------------"
-    echo 'Choose Your Linux Distribution :'
+    echo "Choose Your Linux Distribution : ( Distribution In Use -> '${system_release:0:-6}' )"
     echo '1. Ubuntu'
     echo '2. Linux Mint'
     echo "q. Quit"
