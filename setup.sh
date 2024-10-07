@@ -102,7 +102,7 @@ showBigSurMenu(){
 showVenturaMenu(){
     log_message "INFO" "Displaying Ventura Menu"
 
-    themeMenu "         Selected Theme : Ventura     " \
+    themeMenu "           Selected Theme : Ventura        " \
     "${themePaths["Ventura"]}/install_ventura.sh" \
     "${themePaths["Ventura"]}/reset_to_defaults.sh" \
     "${themePaths["Ventura"]}/Screenshots/" \
