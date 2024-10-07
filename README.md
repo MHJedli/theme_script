@@ -1,7 +1,7 @@
 # My Theme Script :
 A TUI script that helps you install Themes according to your Linux Distribution
 <br><br>
-Current Script Directory Architecture and the Available Themes in a tree representation :
+Current Script Directory Structure and the Available Themes in a tree representation :
 ```
 .
 └── src
