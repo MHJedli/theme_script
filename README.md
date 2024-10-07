@@ -29,6 +29,21 @@ A simple idea of the script :
 
 ![Screenshot from 2024-07-28 13-21-50](https://github.com/user-attachments/assets/f860e26c-6e22-47f8-b6e4-a9fba699bc04)
 
+<br>
+Live Demo :
+
+https://github.com/user-attachments/assets/1671f1a0-8e61-4031-955c-f3a20c3d7729
+
+<br>
+Live Theme Application :
+
+
+https://github.com/user-attachments/assets/636b8a98-59e4-4425-b3ce-0e2dfd88c2e3
+
+
+
+
+<br>
 
 To run the script : 
 <pre>
