@@ -26,6 +26,7 @@ handle_error() {
     log_message "ERROR" "$msg (Exit status: $exit_status)"
     echo "An error occurred: $msg"
     echo "Please check the log file at $LOG_FILE for more details."
+    read
     exit $exit_status
 }
 
