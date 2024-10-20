@@ -14,17 +14,54 @@ if check_internet; then
     log_message "INFO" "Internet Connection Detected. Proceeding with Theme Installation"
 
     log_message "INFO" "Updating the database"
-    echo "Updating the database..."
+    echo "-> Updating the database..."
     sleep 1
     sudo apt update || handle_error "Failed to update the database"
     clear
 
     log_message "INFO" "Installing Dconf Editor , GNOME Tweaks and GNOME Extensions"
-    echo "Installing Dconf Editor , GNOME Tweaks and GNOME Extensions..."
+    echo "-> Installing Dconf Editor , GNOME Tweaks and GNOME Extensions..."
     sleep 1
     sudo apt install dconf-editor gnome-tweaks gnome-shell-extensions -y || handle_error "Failed to install packages"
     clear
 
+    log_message "INFO" "Installing Themes, Icons and Fonts"
+
+    echo "-> Installing Themes, Icons and Fonts..."
+    sleep 1
+    downloadFile "1hKFyFPCQDNGqzGNHO3m-LL4jqQGMsZcj" "${themePaths["Win11"]}/my-icons.tar.gz" || handle_error "Failed to Download Windows 11 Icons"
+    tar --extract --file $path/my-icons.tar.gz -C ~/ --strip-components=2 || handle_error "Failed to extract Icons"
+
+    downloadFile "1NqndXv4fI31SnD5zWGBpDjOt-5b-xVvW" "${themePaths["Win11"]}/my-themes.tar.gz" || handle_error "Failed to Download Windows 11 Theme"
+    tar --extract --file $path/my-themes.tar.gz -C ~/ --strip-components=2 || handle_error "Failed to extract Themes"
+
+    downloadFile "13gsKnp_MqFR0LtLgzp1OZwlrYAC1swgA" "${themePaths["Win11"]}/my-fonts.tar.gz" || handle_error "Failed to Download Windows 11 Fonts"
+    tar --extract --file $path/my-fonts.tar.gz -C ~/ --strip-components=2 || handle_error "Failed to extract Fonts"
+    clear
+    
+    log_message "INFO" "Installing The Extensions"
+    echo "-> Installing The Extensions..."
+    sleep 1
+    downloadFile "13ufXpDEN-YQfNQVLRj6mflFOHMRJXgVj" "${themePaths["Win11"]}/my-extensions.tar.gz" || handle_error "Failed to Download Windows 11 Extensions"
+    tar --extract --file $path/my-extensions.tar.gz -C ~/ --strip-components=2 || handle_error "Failed to extract the Extensions"
+    clear
+    
+    log_message "INFO" "Applying Windows 11 Configurations"
+    echo "-> Applying Windows 11 Configurations..."
+    sleep 1
+    dconf load / < $path/full-gnome-settings || handle_error "Failed to apply Windows 11 configurations"
+    clear
+    
+    log_message "INFO" "Extracting Wallpapers in ~/Pictures and Applying Background"
+    echo "-> Extracting Wallpapers in ~/Pictures and Applying Background..."
+    sleep 1
+    mkdir -p ~/Pictures/Wallpapers || handle_error "Failed to create ~/Pictures/Wallpapers Directory"
+    cp -r $path/Background/* ~/Pictures/Wallpapers || handle_error "Failed to copy Wallpapers"
+    gsettings set org.gnome.desktop.background picture-uri file://$HOME/Pictures/Wallpapers/windows-11-blue-stock-white-background-light-official-3840x2400-5616.jpg || handle_error "Failed to Apply Background Theme"
+    clear
+    
+    signOut "gnome-session-quit --no-prompt"
+    
 else
 
     handle_error "No internet Connection Available. Exiting..."
@@ -32,33 +69,3 @@ else
 fi
 
 
-log_message "INFO" "Installing Themes, Icons and Fonts"
-echo "Installing Themes, Icons and Fonts..."
-sleep 1
-tar --extract --file $path/my-icons.tar.gz -C ~/ --strip-components=2 || handle_error "Failed to extract Icons"
-tar --extract --file $path/my-themes.tar.gz -C ~/ --strip-components=2 || handle_error "Failed to extract Themes"
-tar --extract --file $path/my-fonts.tar.gz -C ~/ --strip-components=2 || handle_error "Failed to extract Fonts"
-clear
-
-log_message "INFO" "Installing The Extensions"
-echo "Installing The Extensions..."
-sleep 1
-tar --extract --file $path/my-extensions.tar.gz -C ~/ --strip-components=2 || handle_error "Failed to extract the Extensions"
-clear
-
-log_message "INFO" "Applying Windows 11 Configurations"
-echo "Applying Windows 11 Configurations..."
-sleep 1
-dconf load / < $path/full-gnome-settings || handle_error "Failed to apply Windows 11 configurations"
-clear
-
-log_message "INFO" "Extracting Wallpapers in ~/Pictures and Applying Background"
-echo "Extracting Wallpapers in ~/Pictures and Applying Background..."
-sleep 1
-mkdir -p ~/Pictures/Wallpapers || handle_error "Failed to create ~/Pictures/Wallpapers Directory"
-cp -r $path/Background/* ~/Pictures/Wallpapers || handle_error "Failed to copy Wallpapers"
-gsettings set org.gnome.desktop.background picture-uri file://$HOME/Pictures/Wallpapers/windows-11-blue-stock-white-background-light-official-3840x2400-5616.jpg || handle_error "Failed to Apply Background Theme"
-clear
-
-signOut "gnome-session-quit --no-prompt"
-log_message "INFO" "Windows 11 Theme Installation Script Ended Succesfully"
