@@ -47,8 +47,6 @@ https://github.com/user-attachments/assets/636b8a98-59e4-4425-b3ce-0e2dfd88c2e3
 
 To run the script : 
 <pre>
-  $ sudo apt install git git-lfs -y
-  $ git lfs install
   $ git clone https://github.com/MHJedli/theme_script.git
   $ cd theme_script/
   $ bash setup.sh or ./setup.sh
