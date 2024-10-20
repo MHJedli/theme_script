@@ -15,6 +15,9 @@ log_message() {
     echo "$(date '+%Y-%m-%d %H:%M:%S') [$LOG_LEVEL] $MESSAGE" >> "$LOG_FILE"
 }
 
+downloadFile(){
+    wget -O "$2" "https://drive.usercontent.google.com/download?id=$1&export=download&confirm=yes"
+}
 
 # Function that handle errors
 # Parameters :
