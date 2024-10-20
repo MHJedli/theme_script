@@ -153,6 +153,7 @@ showUbuntu22LTSGMenu(){
     "My P Theme" \
     "Windows 11" \
     "Windows Everforest Dark" \
+    "MacOS V1" \
     "Return To Previous Menu"
 
     read option
@@ -175,6 +176,10 @@ showUbuntu22LTSGMenu(){
             showWinEDThemeMenu
             ;;
         5)
+            log_message "INFO" "User chose MacOS V1"
+            showMacV1Menu
+            ;;
+        6)
             log_message "INFO" "User chose to return to previous Menu"
             showUbuntuMenu
             ;;
@@ -183,6 +188,18 @@ showUbuntu22LTSGMenu(){
             invalidOption showUbuntu22LTSGMenu
             ;;
     esac
+}
+
+# MacOS V1 Menu
+showMacV1Menu(){
+
+    themeMenu \
+    "          Selected Theme : MacOS V1        " \
+    "${themePaths["MacV1"]}/install_MacV1.sh" \
+    "${themePaths["MacV1"]}/reset_to_defaults.sh" \
+    "${themePaths["MacV1"]}/Screenshots/" \
+    "nautilus" "showUbuntu22LTSGMenu"
+
 }
 
 # GTK Graphite Menu

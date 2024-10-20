@@ -42,6 +42,7 @@ declare -A themePaths=(
     ["PTheme"]="src/Ubuntu/22.04/GNOME-42/My-Theme"
     ["Win11"]="src/Ubuntu/22.04/GNOME-42/Windows-11"
     ["WinEverforestDark"]="src/Ubuntu/22.04/GNOME-42/Windows-Everforest-Dark"
+    ["MacV1"]="src/Ubuntu/22.04/GNOME-42/MacOS-V1"
 )
 
 # invalidOption print Function
