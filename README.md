@@ -15,6 +15,7 @@ Current Script Directory Structure and the Available Themes in a tree representa
             └── GNOME-42
                 ├── GTK-Graphite
                 ├── My-Theme
+                ├── MacOS V1
                 ├── Windows-11
                 └── Windows-Everforest-Dark
 
