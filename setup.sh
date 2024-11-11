@@ -21,7 +21,10 @@ showMainMenu(){
     echo "--------------------------------------"
     echo "|   Welcome to the Theme Installer   |"
     echo "--------------------------------------"
-    echo "Choose Your Linux Distribution : ( Distribution In Use -> '${system_release:0:-6}' )"
+    echo "Distribution In Use -> '${system_release:0:-6}'"
+    echo "Desktop Environment In Use -> $DESKTOP_SESSION"
+    echo "------------------------------------------------------"
+    echo "Choose Your Linux Distribution :"
     echo '1. Ubuntu'
     echo '2. Linux Mint'
     echo "q. Quit"
