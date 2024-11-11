@@ -50,7 +50,7 @@ To run the script :
 <pre>
   $ git clone https://github.com/MHJedli/theme_script.git
   $ cd theme_script/
-  $ bash setup.sh or ./setup.sh
+  $ bash theme_script.sh or ./theme_script.sh
 </pre>
 
 # NOTE :
