@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 # Function that log every step taken for easier debugging
 # Parameters :
 # $1 : Log Level [INFO, WARN, ERROR]
@@ -15,6 +14,11 @@ log_message() {
     echo "$(date '+%Y-%m-%d %H:%M:%S') [$LOG_LEVEL] $MESSAGE" >> "$LOG_FILE"
 }
 
+# Function that download external sources from Google Drive with Bypassing Security Check Message
+# Parameters :
+# $1 : File ID
+# $2 : Path/to/file.extension
+# Usage : downloadFile "<FILE_ID>" "<Path/to/file.extension>"
 downloadFile(){
     wget -O "$2" "https://drive.usercontent.google.com/download?id=$1&export=download&confirm=yes"
 }
@@ -23,6 +27,7 @@ downloadFile(){
 # Parameters :
 # $1 : Log Message
 # $? : argument that will be used with 'trap' command to catch the exit status
+# Usage : handle_error "<Error Message>"
 handle_error() {
     local exit_status=$?
     local msg="$1"
@@ -46,6 +51,9 @@ declare -A themePaths=(
 )
 
 # invalidOption print Function
+# Parameters :
+# $1 : Execute a function when needed
+# Usage : invalidOption "<Function to execute when Needed>"
 invalidOption() {
     echo "No Option Selected !"
     echo "Press Enter To Continue ..."
@@ -59,8 +67,7 @@ invalidOption() {
 # Parameters : 
 # $1 : Menu Title
 # $@ : Menu Options
-# Example : 
-# showMenu "Title" "Option 1" "Option 2" ...
+# Usage : showMenu "Title" "Option 1" "Option 2" ...
 showMenu() {
     local title="$1"
     shift
@@ -138,6 +145,7 @@ themeMenu() {
 # Function that gives the User the choice to sign out from the current session right away or not
 # Parameter :
 # $1 : DE sign out command
+# Usage : signOut "<Command to logout of current session>"
 signOut(){
     local signOutCommand=$1
     while true; do
