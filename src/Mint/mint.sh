@@ -3,7 +3,7 @@
 # External Functions/Files
 source $(pwd)/src/utils.sh
 
-# Linux Mint Menu
+# Linux Mint Main Menu
 showMintMenu(){
     log_message "INFO" "Displaying Linux Mint Menu"
     showMenu \

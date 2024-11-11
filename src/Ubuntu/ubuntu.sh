@@ -3,7 +3,7 @@
 # External Functions/Files
 source $(pwd)/src/utils.sh
 
-# Ubuntu Menu
+# Ubuntu Main Menu
 showUbuntuMenu(){
     log_message "INFO" "Displaying Ubuntu Menu"
     showMenu \

@@ -35,14 +35,14 @@ handle_error() {
 
 # Used Associative Arrays to declare Theme Paths for easier use
 declare -A themePaths=(
-    ["BigSur"]="src/Mint/21.3/Cinnamon-BigSur"
-    ["Win7"]="src/Mint/21.3/Windows-7"
-    ["Ventura"]="src/Mint/21.3/Cinnamon-Ventura"
-    ["GTKGraphite"]="src/Ubuntu/22.04/GNOME-42/GTK-Graphite"
-    ["PTheme"]="src/Ubuntu/22.04/GNOME-42/My-Theme"
-    ["Win11"]="src/Ubuntu/22.04/GNOME-42/Windows-11"
-    ["WinEverforestDark"]="src/Ubuntu/22.04/GNOME-42/Windows-Everforest-Dark"
-    ["MacV1"]="src/Ubuntu/22.04/GNOME-42/MacOS-V1"
+    ["BigSur"]="$(pwd)/src/Mint/21.3/Cinnamon-BigSur"
+    ["Win7"]="$(pwd)/src/Mint/21.3/Windows-7"
+    ["Ventura"]="$(pwd)/src/Mint/21.3/Cinnamon-Ventura"
+    ["GTKGraphite"]="$(pwd)/src/Ubuntu/22.04/GNOME-42/GTK-Graphite"
+    ["PTheme"]="$(pwd)/src/Ubuntu/22.04/GNOME-42/My-Theme"
+    ["Win11"]="$(pwd)/src/Ubuntu/22.04/GNOME-42/Windows-11"
+    ["WinEverforestDark"]="$(pwd)/src/Ubuntu/22.04/GNOME-42/Windows-Everforest-Dark"
+    ["MacV1"]="$(pwd)/src/Ubuntu/22.04/GNOME-42/MacOS-V1"
 )
 
 # invalidOption print Function
