@@ -133,7 +133,7 @@ showWinEDThemeMenu(){
 
     themeMenu \
     "   Selected Theme : Windows Everforest Dark" \
-    "${themePaths["WinEverforestDark"]}/install_Win11.sh" \
+    "${themePaths["WinEverforestDark"]}/install_WinED.sh" \
     "${themePaths["WinEverforestDark"]}/reset_to_defaults.sh" \
     "${themePaths["WinEverforestDark"]}/Screenshots/" \
     "nautilus" \
