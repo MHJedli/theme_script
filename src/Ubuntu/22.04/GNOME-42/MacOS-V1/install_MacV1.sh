@@ -103,7 +103,7 @@ if check_internet; then
     log_message "INFO" "Setting Wallpaper"
     echo "-> Setting Wallpaper..."
     sleep 1
-    gsettings set org.gnome.desktop.background picture-uri file://$HOME/Pictures/Wallpapers/macosw/SequoiaLight.png || handle_error "Failed to Apply Wallpaper"
+    gsettings set org.gnome.desktop.background picture-uri-dark file://$HOME/Pictures/Wallpapers/macosw/SequoiaDark.png || handle_error "Failed to Apply Wallpaper"
 
     signOut "gnome-session-quit --no-prompt"
 
