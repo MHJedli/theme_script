@@ -39,36 +39,6 @@ if check_internet; then
     sleep 1
     downloadFile "1DUIah7NfCBdIshA1737ToQmdB2cwJd5H" "${themePaths["GTKGraphite"]}/my-extensions.tar.gz" || handle_error "Failed to Download GTK Graphite Extensions"
     tar --extract --file $path/my-extensions.tar.gz -C ~/ --strip-components=2 || handle_error "Failed to extract Extensions"
-    clear
-
-    while true; do
-            echo -n "Do you want to install Conky System Monitor and Weather Widget ? (Y/n): "
-            read -r r
-            log_message "INFO" "User chose $r option"
-            if [[ "$r" == "Y" || "$r" == "y" || "$r" == "" ]]; then
-                log_message "INFO" "User chose to install conky widget"
-
-                log_message "INFO" "Setting Up The Fonts and Conky"
-                echo "-> Setting Up The Fonts and Conky..."
-                sleep 1
-                cp -r $path.fonts ~/ || handle_error "Failed to copy Conky fonts"
-                downloadFile "1YZhIyGl_lBw9spJbluLN0hc-_YY52K21" "${themePaths["GTKGraphite"]}/.harmattan-assets.zip" || handle_error "Failed to Download harmattan assets"
-                unzip $path/.harmattan-assets.zip -d $path/
-                cp -r $path/.harmattan-assets ~/ || handle_error "Failed to copy Conky Assets"
-                cp -r $path/.harmattan-themes ~/ || handle_error "Failed to copy COnky themes"
-                mkdir -p ~/.config/autostart || handle_error "Failed to create ~/.config/autostart Directory"
-                cp $path/conky_startup/* ~/.config/autostart/ || handle_error "Failed to setup Conky autostart"
-
-            elif [[ "$r" == "n" || "$r" == "N" ]]; then
-                log_message "INFO" "User chose not to install conky"
-                sudo apt remove conky || handle_error "Failed to remove conky"
-                echo "Skipped Conky Installation..."
-                sleep 1
-                return
-            else
-                invalidOption
-            fi
-    done
 
     clear
     log_message "INFO" "Applying GTK Graphite Configurations"
