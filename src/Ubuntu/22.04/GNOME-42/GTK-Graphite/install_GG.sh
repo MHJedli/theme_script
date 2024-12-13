@@ -18,10 +18,10 @@ if check_internet; then
     sudo apt update || handle_error "Failed to update System Database"
     clear
 
-    log_message "INFO" "Installing Dconf Editor , GNOME Tweaks and GNOME Extensions , conky"
+    log_message "INFO" "Installing Dconf Editor , GNOME Tweaks and GNOME Extensions"
     echo "-> Installing Dconf Editor , GNOME Tweaks and GNOME Extensions..."
     sleep 1
-    sudo apt install dconf-editor gnome-tweaks gnome-shell-extensions jq curl conky -y || handle_error "Failed to install Packages"
+    sudo apt install dconf-editor gnome-tweaks gnome-shell-extensions jq curl -y || handle_error "Failed to install Packages"
     clear
 
     log_message "INFO" "Installing Themes and Icons"
