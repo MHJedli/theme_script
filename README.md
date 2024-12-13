@@ -7,7 +7,6 @@ Current Script Directory Structure and the Available Themes in a tree representa
 └── src
     ├── Mint
     │   └── 21.3
-    │       ├── Cinnamon-BigSur
     │       ├── Cinnamon-Ventura
     │       └── Windows-7
     └── Ubuntu
