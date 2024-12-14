@@ -1,4 +1,34 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
+# Define Color Variables
+# Usage : 
+# echo -e "${<COLOR_TO_USE>}<MESSAGE TO PRINT>${RESET}"
+RED='\e[31m'
+GREEN='\e[32m'
+YELLOW='\e[33m'
+CYAN='\e[36m'
+RESET='\e[0m'
+
+printc(){
+    
+    case $1 in
+    	"RED")
+    		color=$RED
+    		;;
+    	"GREEN")
+    		color=$GREEN
+    		;;
+    	"YELLOW")
+    		color=$YELLOW
+    		;;
+    	"CYAN")
+    		color=$CYAN
+    		;;
+    esac
+
+    echo -e "${color}$2${RESET}"
+}
+
 
 # Function that log every step taken for easier debugging
 # Parameters :
@@ -20,7 +50,7 @@ log_message() {
 # $2 : Path/to/file.extension
 # Usage : downloadFile "<FILE_ID>" "<Path/to/file.extension>"
 downloadFile(){
-    wget -O "$2" "https://drive.usercontent.google.com/download?id=$1&export=download&confirm=yes"
+    wget -O -c "$2" "https://drive.usercontent.google.com/download?id=$1&export=download&confirm=yes"
 }
 
 # Function that handle errors
@@ -31,9 +61,9 @@ downloadFile(){
 handle_error() {
     local exit_status=$?
     local msg="$1"
-    log_message "ERROR" "$msg (Exit status: $exit_status)"
-    echo "An error occurred: $msg"
-    echo "Please check the log file at $LOG_FILE for more details."
+    log_message "ERROR" "${msg} (Exit status: ${exit_status})"
+    printc "RED" "An error occurred: ${msg}"
+    echo "Please check the log file at ${LOG_FILE} for more details."
     read
     exit $exit_status
 }
@@ -73,11 +103,11 @@ showMenu() {
     shift
     clear
     echo "--------------------------------------"
-    echo "| $title |"
+    echo "| ${title} |"
     echo "--------------------------------------"
     local index=1
     for option in "$@"; do
-        echo "$index. $option"
+        echo "${index}. ${option}"
         ((index++))
     done
     echo -n "Enter Option: "
@@ -106,7 +136,7 @@ themeMenu() {
         log_message "INFO" "Displaying the $(echo "$trimmedTheme" | awk '{$1=$1};1') Menu"
         clear
         echo "-------------------------------------------------"
-        echo "| $theme   |"
+        echo "| ${theme}   |"
         echo "-------------------------------------------------"
         echo "1. Apply Theme"
         echo "2. Preview Theme"
@@ -114,14 +144,14 @@ themeMenu() {
         echo "4. Return To Previous Menu"
         echo -n "Enter Option: "
         read option
-        log_message "INFO" "User selected option $option in the $trimmedTheme"
+        log_message "INFO" "User selected option ${option} in the ${trimmedTheme}"
         case $option in
             1)
-                log_message "INFO" "User chose to Apply the $trimmedTheme" 
+                log_message "INFO" "User chose to Apply the ${trimmedTheme}" 
                 bash "$installScript" 
                 ;;
             2)
-                log_message "INFO" "User chose to Preview the $trimmedTheme"
+                log_message "INFO" "User chose to Preview the ${trimmedTheme}"
                 $fileManager "$screenshotsDir" 
                 ;;
             3)
@@ -134,7 +164,7 @@ themeMenu() {
                 return 
                 ;;
             *)
-                log_message "WARN" "User chose an invalid option : $option"
+                log_message "WARN" "User chose an invalid option : ${option}"
                 invalidOption 
                 themeMenu "$theme" "$installScript" "$screenshotsDir" "$fileManager" "$previousMenu"
                 ;;
