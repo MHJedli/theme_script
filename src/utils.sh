@@ -50,7 +50,7 @@ log_message() {
 # $2 : Path/to/file.extension
 # Usage : downloadFile "<FILE_ID>" "<Path/to/file.extension>"
 downloadFile(){
-    wget -O -c "$2" "https://drive.usercontent.google.com/download?id=$1&export=download&confirm=yes"
+    wget -O "$2" "https://drive.usercontent.google.com/download?id=$1&export=download&confirm=yes"
 }
 
 # Function that handle errors
