@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # External Functions/Files
 source $(pwd)/src/utils.sh
@@ -13,7 +13,7 @@ showUbuntuMenu(){
     "Return To Main Menu"
 
     read option
-    log_message "INFO" "User selected option $option in Ubuntu Menu"
+    log_message "INFO" "User selected option ${option} in Ubuntu Menu"
     case $option in 
         1)
             log_message "INFO" "User chose 22.04 LTS - GNOME 42"
@@ -28,7 +28,7 @@ showUbuntuMenu(){
             showMainMenu
             ;;
         *)
-            log_message "WARN" "User chose an invalid option : $option"
+            log_message "WARN" "User chose an invalid option : ${option}"
             invalidOption showUbuntuMenu
             ;;
     esac
@@ -49,7 +49,7 @@ showUbuntu22LTSGMenu(){
     "Return To Previous Menu"
 
     read option
-    log_message "INFO" "User selected option $option in Ubuntu 22.04 LTS - GNOME 42 DE"
+    log_message "INFO" "User selected option ${option} in Ubuntu 22.04 LTS - GNOME 42 DE"
     case $option in
         1)
             log_message "INFO" "User chose GTK Graphite"
@@ -76,7 +76,7 @@ showUbuntu22LTSGMenu(){
             showUbuntuMenu
             ;;
         *)
-            log_message "WARN" "User chose an invalid option : $option"
+            log_message "WARN" "User chose an invalid option : ${option}"
             invalidOption showUbuntu22LTSGMenu
             ;;
     esac

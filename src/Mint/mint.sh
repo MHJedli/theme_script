@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # External Functions/Files
 source $(pwd)/src/utils.sh
@@ -12,7 +12,7 @@ showMintMenu(){
     "Return To Main Menu"
 
     read option
-    log_message "INFO" "User selected option $option in Linux Mint Menu"
+    log_message "INFO" "User selected option ${option} in Linux Mint Menu"
     case $option in
         1)
             log_message "INFO" "User chose 21.3 - Cinnamon Edition"
@@ -23,7 +23,7 @@ showMintMenu(){
             showMainMenu
             ;;
         *)
-            log_message "WARN" "User chose an invalid option : $option"
+            log_message "WARN" "User chose an invalid option : ${option}"
             invalidOption showMintMenu
             ;;
     esac
@@ -39,7 +39,7 @@ showMint213CMenu(){
     "Return To Main Menu"
 
     read option
-    log_message "INFO" "User selected option $option in Linux Mint 21.3 - Cinnamon DE Menu"
+    log_message "INFO" "User selected option ${option} in Linux Mint 21.3 - Cinnamon DE Menu"
     case $option in
     1)
         log_message "INFO" "User chose Ventura"
@@ -54,7 +54,7 @@ showMint213CMenu(){
         showMainMenu
         ;;
     *)
-        log_message "WARN" "User chose an invalid option : $option"
+        log_message "WARN" "User chose an invalid option : ${option}"
         invalidOption showMint213CMenu
         ;;
     esac
