@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # External Functions/Files
 source src/utils.sh
@@ -22,7 +22,7 @@ showMainMenu(){
     echo "|   Welcome to the Theme Installer   |"
     echo "--------------------------------------"
     echo "Distribution In Use -> '${system_release:0:-6}'"
-    echo "Desktop Environment In Use -> $DESKTOP_SESSION"
+    echo "Desktop Environment In Use -> ${DESKTOP_SESSION}"
     echo "------------------------------------------------------"
     echo "Choose Your Linux Distribution :"
     echo '1. Ubuntu'
@@ -30,7 +30,7 @@ showMainMenu(){
     echo "q. Quit"
     echo -n "Enter Option : "
     read option
-    log_message "INFO" "User selected option $option in Main Menu"
+    log_message "INFO" "User selected option ${option} in Main Menu"
 
     case $option in
         1)
@@ -46,7 +46,7 @@ showMainMenu(){
             exit 1
             ;;
         *)
-            log_message "WARN" "User chose an invalid option : $option"
+            log_message "WARN" "User chose an invalid option : ${option}"
             invalidOption showMainMenu
             ;;
     esac
