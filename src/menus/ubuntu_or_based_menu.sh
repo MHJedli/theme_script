@@ -119,20 +119,20 @@ show_gnome_version(){
 show_cinnamon_menu(){
     log_message "INFO" "Displaying Cinnamon Theme Menu"
     local option=$(whiptail --title "Cinnamon Theme Menu" --menu "Choose your Cinnamon Theme" 30 80 16 \
-    "Cinnamon-Ventura" "" \
-    "Windows-7" "" \
+    "Ventura" "" \
+    "Win7" "" \
     "<-- Back" "" \
     3>&1 1>&2 2>&3)
 
     case $option in
-        "Cinnamon-Ventura")
+        "Ventura")
             log_message "INFO" "User chose Cinnamon for $option"
             options_menu "$option" \
                          "${THEME_PATHS["$option"-installer]}" \
                          "${THEME_PATHS["$option"-remover]}" \
                          "show_cinnamon_menu"
             ;;
-        "Windows-7")
+        "Win7")
             log_message "INFO" "User chose Cinnamon for $option"
             options_menu "$option" \
                          "${THEME_PATHS["$option"-installer]}" \

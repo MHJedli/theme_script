@@ -21,9 +21,9 @@ declare -A THEME_PATHS=(
     ["MacOS-V1-remover"]="${SCRIPT_DIR}/src/scripts/GNOME/22.04/MacOS-V1/reset_to_defaults.sh"
 
     # Cinnamon Themes
-    ["Win7-installer"]="${SCRIPT_DIR}/src/Mint/21.3/Windows-7/install_windows7.sh"
-    ["Win7-remover"]="${SCRIPT_DIR}/src/Mint/21.3/Windows-7/reset_to_defaults.sh"
+    ["Win7-installer"]="${SCRIPT_DIR}/src/scripts/Cinnamon/Windows-7/install_windows7.sh"
+    ["Win7-remover"]="${SCRIPT_DIR}/src/scripts/Cinnamon/Windows-7/reset_to_defaults.sh"
 
-    ["Ventura-installer"]="${SCRIPT_DIR}/src/Mint/21.3/Cinnamon-Ventura/install_ventura.sh"
-    ["Ventura-remover"]="${SCRIPT_DIR}/src/Mint/21.3/Cinnamon-Ventura/reset_to_defaults.sh"
+    ["Ventura-installer"]="${SCRIPT_DIR}/src/scripts/Cinnamon/Cinnamon-Ventura/install_ventura.sh"
+    ["Ventura-remover"]="${SCRIPT_DIR}/src/scripts/Cinnamon/Cinnamon-Ventura/reset_to_defaults.sh"
 )

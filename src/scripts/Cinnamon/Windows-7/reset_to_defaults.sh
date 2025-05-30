@@ -1,11 +1,15 @@
 #!/usr/bin/env bash
 
-source $(pwd)/src/utils.sh
-LOG_FILE=$(pwd)/src/logfile.log
-trap 'handle_error "An unexpected error occurred."' ERR
+# External Functions/Files
+ROOT_PATH=$(pwd)
+UTILS="${ROOT_PATH}/src/utils.sh"
+source "$UTILS"
+LOG_FILE="${ROOT_PATH}/src/logfile.log"
 
+trap 'handle_error "An unexpected error occurred."' ERR
 clear
 
+# Begin Windows 7 Theme Removal
 echo "Continue script execution in Windows 7 Theme Removal at $(date)" >> "$LOG_FILE"
 
 printc "YELLOW" "-> Checking for Internet Connection..."
@@ -40,10 +44,13 @@ if check_internet; then
     printc "YELLOW" "-> Reverting to Factory Defaults..."
     sleep 1
     dconf reset -f /org/cinnamon/ || handle_error "Failed to Apply Factory Defaults"
-
-    signOut "cinnamon-session-quit --logout --force"
+    
+    if whiptail --title "Ventura Theme Removal" --yesno "Ventura Theme has been removed successfully.\nDo you want to sign out to fully reset ?" 10 60; then
+        log_message "INFO" "User chose to sign out after removal"
+        cinnamon-session-quit --logout --force || handle_error "Failed to sign out"
+    fi
 
 else
     handle_error "No internet Connection Available. Exiting..."
 fi
-
+# End Windows 7 Theme Removal
