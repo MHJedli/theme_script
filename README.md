@@ -5,29 +5,33 @@ Current Script Directory Structure and the Available Themes in a tree representa
 ```
 .
 └── src
-    ├── Mint
-    │   └── 21.3
-    │       ├── Cinnamon-Ventura
-    │       └── Windows-7
-    └── Ubuntu
-        └── 22.04
-            └── GNOME-42
-                ├── GTK-Graphite
-                ├── My-Theme
-                ├── MacOS V1
-                ├── Windows-11
-                └── Windows-Everforest-Dark
+    ├── menus
+    └── scripts
+        ├── Cinnamon
+        │   ├── Cinnamon-Ventura
+        │   └── Windows-7
+        └── GNOME
+            ├── 22.04
+            │   ├── GTK-Graphite
+            │   ├── MacOS-V1
+            │   ├── My-Theme
+            │   ├── Windows-11
+            │   └── Windows-Everforest-Dark
+            └── 24.04
 
 ```
 <br>
 A simple idea of the script :
 <br>
 
-![Screenshot from 2024-07-28 13-15-22](https://github.com/user-attachments/assets/b4c02fbc-c5a5-4c27-8702-db5212f078eb)
+![Screenshot from 2025-05-30 18-41-38](https://github.com/user-attachments/assets/f2396cef-2f1f-4bd0-b4e4-96a8f86ce474)
 
-![Screenshot from 2024-07-28 13-18-30](https://github.com/user-attachments/assets/b9b6d34f-23f5-4570-b186-c84f5ab71066)
+![Screenshot from 2025-05-30 18-41-44](https://github.com/user-attachments/assets/8a2ea9f4-e8d0-4c77-be5b-9a09c6c8aff2)
 
-![Screenshot from 2024-07-28 13-21-50](https://github.com/user-attachments/assets/f860e26c-6e22-47f8-b6e4-a9fba699bc04)
+![Screenshot from 2025-05-30 18-41-48](https://github.com/user-attachments/assets/74f9307b-5b00-4980-b580-3da261aa90f0)
+
+![Screenshot from 2025-05-30 18-41-57](https://github.com/user-attachments/assets/71c808b2-dc2d-4bed-9fa3-3ec9d945f949)
+
 
 <br>
 Live Demo :
@@ -49,7 +53,8 @@ To run the script :
 <pre>
   $ git clone https://github.com/MHJedli/theme_script.git
   $ cd theme_script/
-  $ bash theme_script.sh or ./theme_script.sh
+  $ chmod +x theme_script.sh
+  $ ./theme_script.sh
 </pre>
 
 # NOTE :
