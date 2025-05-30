@@ -99,10 +99,7 @@ show_gnome_version(){
             ;;
         "GNOME 46")
             log_message "INFO" "User chose GNOME 46 for $selected_theme"
-            options_menu "$selected_theme" \
-                         "${THEME_PATHS["$selected_theme"-installer]}" \
-                         "${THEME_PATHS["$selected_theme"-remover]}" \
-                         "show_gnome_version"
+            print_msgbox "Not Available" "This theme is not available for GNOME 46 yet."
             ;;
         "<-- Back")
             log_message "INFO" "User chose to go back"

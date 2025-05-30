@@ -126,28 +126,6 @@ handle_error() {
     exit $exit_status
 }
 
-# Function that gives the User the choice to sign out from the current session right away or not
-# Parameter :
-# $1 : DE sign out command
-# Usage : signOut "<Command to logout of current session>"
-signOut(){
-    local signOutCommand=$1
-    while true; do
-        echo -n "Do you want to log out now to fully apply the theme? (Y/n): "
-        read -r r
-        if [[ "$r" == "Y" || "$r" == "y" || "$r" == "" ]]; then
-            echo "Logging out in 3 seconds..."
-            sleep 3
-            $signOutCommand
-        elif [[ "$r" == "n" || "$r" == "N" ]]; then
-            echo "Please log out manually to apply the changes."
-            return
-        else
-            invalidOption
-        fi
-    done
-}
-
 # Function to check internet connectivity
 check_internet() {
     ping -c 1 -q google.com >&/dev/null
