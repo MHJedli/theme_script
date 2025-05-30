@@ -95,14 +95,14 @@ show_gnome_version(){
             options_menu "$selected_theme" \
                          "${THEME_PATHS["$selected_theme"-installer]}" \
                          "${THEME_PATHS["$selected_theme"-remover]}" \
-                         "gnome_version"
+                         "show_gnome_version"
             ;;
         "GNOME 46")
             log_message "INFO" "User chose GNOME 46 for $selected_theme"
             options_menu "$selected_theme" \
                          "${THEME_PATHS["$selected_theme"-installer]}" \
                          "${THEME_PATHS["$selected_theme"-remover]}" \
-                         "gnome_version"
+                         "show_gnome_version"
             ;;
         "<-- Back")
             log_message "INFO" "User chose to go back"

@@ -79,7 +79,7 @@ options_menu() {
             log_message "INFO" "User chose to install ${selected_option}"
             . "$install_script"
             ;;
-        "Remove")
+        "Reset")
             log_message "INFO" "User chose to remove ${selected_option}"
             . "$remove_script"
             ;;
@@ -103,7 +103,10 @@ options_menu() {
 # $2 : Path/to/file.extension
 # Usage : downloadFile "<FILE_ID>" "<Path/to/file.extension>"
 downloadFile(){
-    wget -O "$2" "https://drive.usercontent.google.com/download?id=$1&export=download&confirm=yes"
+    local file_id=$1
+    local file_path=$2
+
+    wget -c "https://drive.usercontent.google.com/download?id=${file_id}&export=download&confirm=yes" -O "$file_path"
 }
 
 # Function that handle errors

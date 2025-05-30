@@ -9,7 +9,7 @@ declare -A THEME_PATHS=(
     ["GTK-Graphite-remover"]="${SCRIPT_DIR}/src/scripts/GNOME/22.04/GTK-Graphite/reset_to_defaults.sh"
 
     ["My-Theme-installer"]="${SCRIPT_DIR}/src/scripts/GNOME/22.04/My-Theme/install_MP.sh"
-    ["My-Theme-remover"]="${SCRIPT_DIR}/src/scripts/GNOME/22.04/My-Theme/reset_to_defaults_MP.sh"
+    ["My-Theme-remover"]="${SCRIPT_DIR}/src/scripts/GNOME/22.04/My-Theme/reset_to_defaults.sh"
 
     ["Win-11-installer"]="${SCRIPT_DIR}/src/scripts/GNOME/22.04/Windows-11/install_Win11.sh"
     ["Win-11-remover"]="${SCRIPT_DIR}/src/scripts/GNOME/22.04/Windows-11/reset_to_defaults.sh"
