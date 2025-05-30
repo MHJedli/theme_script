@@ -1,5 +1,14 @@
 #!/usr/bin/env bash
 
+# Define Working Directory Path : 
+WORK_DIR=$(pwd)
+
+# Define Distribution Variables : 
+DISTRIBUTION=$(grep ^ID= /etc/os-release | cut -d= -f2 | tr -d '"')
+DISTRIBUTION_NAME=$(grep ^PRETTY_NAME= /etc/os-release | cut -d= -f2 | tr -d '"')
+UBUNTU_BASE=$(grep ^ID_LIKE= /etc/os-release | cut -d= -f2 | tr -d '"' | grep "ubuntu")
+FEDORA_BASE=$(grep ^ID_LIKE= /etc/os-release | cut -d= -f2 | tr -d '"' | grep "fedora")
+
 # Define Color Variables
 # Usage : 
 # echo -e "${<COLOR_TO_USE>}<MESSAGE TO PRINT>${RESET}"
@@ -29,6 +38,14 @@ printc(){
     echo -e "${color}$2${RESET}"
 }
 
+# Function that prints a message box
+print_msgbox(){
+    local title=$1
+    local msg=$2
+    whiptail --title "$title" --msgbox \
+    "$msg" \ 10 80
+}
+
 
 # Function that log every step taken for easier debugging
 # Parameters :
@@ -44,6 +61,42 @@ log_message() {
     echo "$(date '+%Y-%m-%d %H:%M:%S') [$LOG_LEVEL] $MESSAGE" >> "$LOG_FILE"
 }
 
+options_menu() {
+    local selected_option=$1
+    local install_script=$2
+    local remove_script=$3
+    local previous_menu=$4
+    log_message "INFO" "Displaying ${selected_option} Menu"
+    local option=$(whiptail --title "$selected_option" --menu "Choose an option" 30 80 16 \
+    "Install" "" \
+    "Reset" "" \
+    "Preview" "" \
+    "<-- Back" "Return To Previous Menu" \
+    3>&1 1>&2 2>&3)
+
+    case $option in
+        "Install")
+            log_message "INFO" "User chose to install ${selected_option}"
+            . "$install_script"
+            ;;
+        "Remove")
+            log_message "INFO" "User chose to remove ${selected_option}"
+            . "$remove_script"
+            ;;
+        "Preview")
+            log_message "INFO" "User chose to preview ${selected_option}"
+            ;;
+        "<-- Back")
+            log_message "INFO" "User chose to return To Previous Menu"
+            "$previous_menu"
+            ;;
+        *)
+            echo "Ending Utility Script GUI Execution at $(date)" >> "$LOG_FILE"
+            echo "Exiting..."
+            ;;
+    esac
+}
+
 # Function that download external sources from Google Drive with Bypassing Security Check Message
 # Parameters :
 # $1 : File ID
@@ -57,119 +110,17 @@ downloadFile(){
 # Parameters :
 # $1 : Log Message
 # $? : argument that will be used with 'trap' command to catch the exit status
-# Usage : handle_error "<Error Message>"
 handle_error() {
     local exit_status=$?
     local msg="$1"
     log_message "ERROR" "${msg} (Exit status: ${exit_status})"
-    printc "RED" "An error occurred: ${msg}"
-    echo "Please check the log file at ${LOG_FILE} for more details."
-    read
+	whiptail --title "ERROR" --msgbox \
+	"
+    An error occurred: ${msg}
+    Please check the log file for more details :
+    ${LOG_FILE}
+    " \ 10 80
     exit $exit_status
-}
-
-# Used Associative Arrays to declare Theme Paths for easier use
-declare -A themePaths=(
-    ["BigSur"]="$(pwd)/src/Mint/21.3/Cinnamon-BigSur"
-    ["Win7"]="$(pwd)/src/Mint/21.3/Windows-7"
-    ["Ventura"]="$(pwd)/src/Mint/21.3/Cinnamon-Ventura"
-    ["GTKGraphite"]="$(pwd)/src/Ubuntu/22.04/GNOME-42/GTK-Graphite"
-    ["PTheme"]="$(pwd)/src/Ubuntu/22.04/GNOME-42/My-Theme"
-    ["Win11"]="$(pwd)/src/Ubuntu/22.04/GNOME-42/Windows-11"
-    ["WinEverforestDark"]="$(pwd)/src/Ubuntu/22.04/GNOME-42/Windows-Everforest-Dark"
-    ["MacV1"]="$(pwd)/src/Ubuntu/22.04/GNOME-42/MacOS-V1"
-)
-
-# invalidOption print Function
-# Parameters :
-# $1 : Execute a function when needed
-# Usage : invalidOption "<Function to execute when Needed>"
-invalidOption() {
-    echo "No Option Selected !"
-    echo "Press Enter To Continue ..."
-    read
-    if [ $# -gt 0 ]; then
-    "$1"
-    fi
-}
-
-# Function that prints the Menu of different versions of a selected distro
-# Parameters : 
-# $1 : Menu Title
-# $@ : Menu Options
-# Usage : showMenu "Title" "Option 1" "Option 2" ...
-showMenu() {
-    local title="$1"
-    shift
-    clear
-    echo "--------------------------------------"
-    echo "| ${title} |"
-    echo "--------------------------------------"
-    local index=1
-    for option in "$@"; do
-        echo "${index}. ${option}"
-        ((index++))
-    done
-    echo -n "Enter Option: "
-}
-
-
-# Function that prints the menu of a selected theme
-# Parameters :
-# $1 : Title
-# $2 : Install_Script.sh
-# $3 : Reset_Script.sh
-# $4 : Screenshot Directory
-# $5 : File Manager
-# $6 : Previous Menu to the Current one
-# Usage :
-# themeMenu "Selected Theme : <Theme Name>" "${themePaths["<Theme_Key>"]}/<Theme_Script>.sh" "${themePaths["<Theme_Key>"]}/Screenshots/" "<File_Manager>" "<Current_Menu_Name>"
-themeMenu() {
-    local theme=$1
-    local trimmedTheme=$(echo "$theme" | awk '{$1=$1};1')
-    local installScript=$2
-    local resetScript=$3
-    local screenshotsDir=$4
-    local fileManager=$5
-    local previousMenu=$6
-    while true; do
-        log_message "INFO" "Displaying the $(echo "$trimmedTheme" | awk '{$1=$1};1') Menu"
-        clear
-        echo "-------------------------------------------------"
-        echo "| ${theme}   |"
-        echo "-------------------------------------------------"
-        echo "1. Apply Theme"
-        echo "2. Preview Theme"
-        echo "3. Reset to Factory Defaults"
-        echo "4. Return To Previous Menu"
-        echo -n "Enter Option: "
-        read option
-        log_message "INFO" "User selected option ${option} in the ${trimmedTheme}"
-        case $option in
-            1)
-                log_message "INFO" "User chose to Apply the ${trimmedTheme}" 
-                bash "$installScript" 
-                ;;
-            2)
-                log_message "INFO" "User chose to Preview the ${trimmedTheme}"
-                $fileManager "$screenshotsDir" 
-                ;;
-            3)
-                log_message "INFO" "User chose to Reset to Factory Defaults"
-                bash "$resetScript"
-                ;;
-            4)
-                log_message "INFO" "User chose to return to Previous Menu"
-                "$previousMenu"
-                return 
-                ;;
-            *)
-                log_message "WARN" "User chose an invalid option : ${option}"
-                invalidOption 
-                themeMenu "$theme" "$installScript" "$screenshotsDir" "$fileManager" "$previousMenu"
-                ;;
-        esac
-    done
 }
 
 # Function that gives the User the choice to sign out from the current session right away or not
