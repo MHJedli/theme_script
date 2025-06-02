@@ -13,6 +13,8 @@ declare -A THEME_PATHS=(
 
     ["Win-11-installer"]="${SCRIPT_DIR}/src/scripts/GNOME/22.04/Windows-11/install_Win11.sh"
     ["Win-11-remover"]="${SCRIPT_DIR}/src/scripts/GNOME/22.04/Windows-11/reset_to_defaults.sh"
+    ["Win-11-46-installer"]="${SCRIPT_DIR}/src/scripts/GNOME/24.04/Windows-11/install_Win11.sh"
+    ["Win-11-46-remover"]="${SCRIPT_DIR}/src/scripts/GNOME/24.04/Windows-11/reset_to_defaults.sh"
 
     ["Win-Everforest-Dark-installer"]="${SCRIPT_DIR}/src/scripts/GNOME/22.04/Windows-Everforest-Dark/install_WinED.sh"
     ["Win-Everforest-Dark-remover"]="${SCRIPT_DIR}/src/scripts/GNOME/22.04/Windows-Everforest-Dark/reset_to_defaults.sh"

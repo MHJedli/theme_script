@@ -1,0 +1,319 @@
+[apps/update-manager]
+first-run=false
+launch-count=1
+launch-time=int64 1709169739
+
+[com/ubuntu/update-notifier]
+release-check-time=uint32 1748869544
+
+[org/gnome/control-center]
+last-panel='wifi'
+window-state=(980, 640, false)
+
+[org/gnome/desktop/app-folders]
+folder-children=['Utilities', 'YaST', 'Pardus']
+
+[org/gnome/desktop/app-folders/folders/Pardus]
+categories=['X-Pardus-Apps']
+name='X-Pardus-Apps.directory'
+translate=true
+
+[org/gnome/desktop/app-folders/folders/Utilities]
+apps=['gnome-abrt.desktop', 'gnome-system-log.desktop', 'nm-connection-editor.desktop', 'org.gnome.baobab.desktop', 'org.gnome.Connections.desktop', 'org.gnome.DejaDup.desktop', 'org.gnome.Dictionary.desktop', 'org.gnome.DiskUtility.desktop', 'org.gnome.Evince.desktop', 'org.gnome.FileRoller.desktop', 'org.gnome.fonts.desktop', 'org.gnome.Loupe.desktop', 'org.gnome.seahorse.Application.desktop', 'org.gnome.tweaks.desktop', 'org.gnome.Usage.desktop', 'vinagre.desktop']
+categories=['X-GNOME-Utilities']
+name='X-GNOME-Utilities.directory'
+translate=true
+
+[org/gnome/desktop/app-folders/folders/YaST]
+categories=['X-SuSE-YaST']
+name='suse-yast.directory'
+translate=true
+
+[org/gnome/desktop/background]
+picture-options='zoom'
+picture-uri='file:///home/test/.config/background'
+picture-uri-dark='file:///home/test/.config/background'
+
+[org/gnome/desktop/input-sources]
+sources=[('xkb', 'fr')]
+
+[org/gnome/desktop/interface]
+color-scheme='prefer-dark'
+cursor-theme='Win7OS-cursors'
+document-font-name='Segoe UI 11'
+enable-animations=true
+font-name='Segoe UI 11'
+gtk-theme='Win11-Light'
+icon-theme='Win11-dark'
+monospace-font-name='Ubuntu Sans Mono Medium 11 @wght=500'
+toolkit-accessibility=false
+
+[org/gnome/desktop/notifications]
+application-children=['spotify', 'org-gnome-nautilus', 'firefox-firefox']
+
+[org/gnome/desktop/notifications/application/firefox-firefox]
+application-id='firefox_firefox.desktop'
+
+[org/gnome/desktop/notifications/application/org-gnome-nautilus]
+application-id='org.gnome.Nautilus.desktop'
+
+[org/gnome/desktop/notifications/application/spotify]
+application-id='spotify.desktop'
+
+[org/gnome/desktop/peripherals/keyboard]
+numlock-state=true
+
+[org/gnome/evolution-data-server]
+migrated=true
+
+[org/gnome/mutter]
+center-new-windows=true
+edge-tiling=false
+overlay-key='Super_L'
+
+[org/gnome/mutter/keybindings]
+toggle-tiled-left=@as []
+toggle-tiled-right=@as []
+
+[org/gnome/nautilus/preferences]
+default-folder-viewer='icon-view'
+migrated-gtk-settings=true
+search-filter-time-type='last_modified'
+
+[org/gnome/nautilus/window-state]
+initial-size=(890, 550)
+maximized=true
+
+[org/gnome/settings-daemon/plugins/color]
+night-light-enabled=false
+
+[org/gnome/shell]
+disabled-extensions=['ubuntu-dock@ubuntu.com', 'user-theme-x@tuberry.github.io']
+enabled-extensions=['dm-theme-changer@lynixx01.github.com', 'dash-to-panel@jderose9.github.com', 'blur-my-shell@aunetx', 'arcmenu@arcmenu.com', 'date-menu-formatter@marcinjakubowski.github.com', 'Vitals@CoreCoding.com', 'mediacontrols@cliffniff.github.com', 'just-perfection-desktop@just-perfection', 'notification-timeout@chlumskyvaclav.gmail.com', 'caffeine@patapon.info']
+favorite-apps=['firefox_firefox.desktop', 'org.gnome.Nautilus.desktop']
+last-selected-power-profile='performance'
+welcome-dialog-last-shown-version='46.0'
+
+[org/gnome/shell/extensions/arcmenu]
+apps-show-extra-details=true
+button-padding=-1
+custom-menu-button-icon='distributor-logo-windows'
+custom-menu-button-icon-size=30.0
+disable-scrollview-fade-effect=false
+force-menu-location='MonitorCentered'
+left-panel-width=250
+menu-arrow-rise=(false, 5)
+menu-button-appearance='Icon'
+menu-button-icon='Custom_Icon'
+menu-button-position-offset=0
+menu-height=575
+menu-layout='Eleven'
+menu-width-adjustment=-80
+misc-item-icon-size='Default'
+override-menu-theme=false
+pinned-apps=[{'id': 'firefox_firefox.desktop'}, {'id': 'org.gnome.Nautilus.desktop'}, {'id': 'org.gnome.Terminal.desktop'}, {'id': 'org.gnome.Settings.desktop'}]
+position-in-panel='Left'
+power-options=[(0, true), (1, true), (3, true), (2, true), (4, true), (5, false), (6, false), (7, true)]
+prefs-visible-page=0
+recently-installed-apps=@as []
+right-panel-width=200
+search-entry-border-radius=(true, 25)
+show-activities-button=false
+show-category-sub-menus=false
+show-hidden-recent-files=false
+update-notifier-project-version=66
+
+[org/gnome/shell/extensions/blur-my-shell]
+settings-version=2
+
+[org/gnome/shell/extensions/blur-my-shell/appfolder]
+brightness=0.59999999999999998
+sigma=30
+
+[org/gnome/shell/extensions/blur-my-shell/applications]
+blur=true
+
+[org/gnome/shell/extensions/blur-my-shell/coverflow-alt-tab]
+pipeline='pipeline_default'
+
+[org/gnome/shell/extensions/blur-my-shell/dash-to-dock]
+blur=false
+brightness=0.59999999999999998
+pipeline='pipeline_default_rounded'
+sigma=30
+static-blur=true
+style-dash-to-dock=0
+
+[org/gnome/shell/extensions/blur-my-shell/hidetopbar]
+compatibility=false
+
+[org/gnome/shell/extensions/blur-my-shell/lockscreen]
+pipeline='pipeline_default'
+
+[org/gnome/shell/extensions/blur-my-shell/overview]
+pipeline='pipeline_default'
+
+[org/gnome/shell/extensions/blur-my-shell/panel]
+blur=true
+brightness=0.80000000000000004
+force-light-text=true
+pipeline='pipeline_default'
+sigma=30
+static-blur=false
+
+[org/gnome/shell/extensions/blur-my-shell/screenshot]
+pipeline='pipeline_default'
+
+[org/gnome/shell/extensions/blur-my-shell/window-list]
+brightness=0.59999999999999998
+sigma=30
+
+[org/gnome/shell/extensions/caffeine]
+indicator-position-max=2
+
+[org/gnome/shell/extensions/coverflowalttab]
+switcher-background-color=(0.93333333333333335, 0.93333333333333335, 0.92549019607843142)
+
+[org/gnome/shell/extensions/dash-to-panel]
+animate-appicon-hover=false
+animate-appicon-hover-animation-extent={'RIPPLE': 4, 'PLANK': 4, 'SIMPLE': 1}
+appicon-margin=1
+appicon-padding=9
+appicon-style='NORMAL'
+dot-position='BOTTOM'
+dot-style-focused='DASHES'
+dot-style-unfocused='DASHES'
+extension-version=68
+global-border-radius=1
+hotkeys-overlay-combo='TEMPORARILY'
+panel-anchors='{"BOE-0x00000000":"MIDDLE"}'
+panel-element-positions='{"BOE-0x00000000":[{"element":"rightBox","visible":true,"position":"stackedTL"},{"element":"showAppsButton","visible":false,"position":"stackedTL"},{"element":"activitiesButton","visible":false,"position":"stackedTL"},{"element":"leftBox","visible":true,"position":"centerMonitor"},{"element":"taskbar","visible":true,"position":"centerMonitor"},{"element":"centerBox","visible":true,"position":"stackedBR"},{"element":"systemMenu","visible":true,"position":"stackedBR"},{"element":"dateMenu","visible":true,"position":"stackedBR"},{"element":"desktopButton","visible":true,"position":"stackedBR"}]}'
+panel-lengths='{}'
+panel-positions='{}'
+panel-sizes='{}'
+prefs-opened=false
+primary-monitor='BOE-0x00000000'
+show-apps-icon-file=''
+show-apps-icon-side-padding=0
+show-apps-override-escape=false
+stockgs-force-hotcorner=false
+stockgs-keep-dash=false
+trans-panel-opacity=0.70000000000000007
+trans-use-custom-opacity=false
+trans-use-dynamic-opacity=false
+window-preview-title-position='TOP'
+
+[org/gnome/shell/extensions/date-menu-formatter]
+font-size=11
+formatter='01_luxon'
+pattern='H : mm \\n EEE, MMM d'
+text-align='center'
+
+[org/gnome/shell/extensions/ding]
+check-x11wayland=true
+
+[org/gnome/shell/extensions/dmthemechanger]
+cursor-theme-dark='Win7OS-cursors'
+cursor-theme-light='Win7OS-cursors'
+darklight-transition-duration=500
+darkmode-toggle-clickdelay=1000
+first-time-install=false
+gtk3-theme-dark='Win11-Light'
+gtk3-theme-light='Win11'
+icon-theme-dark='Win11-dark'
+icon-theme-light='Win11'
+optimize-darklight-switch-transition=true
+shell-theme-dark='Win11-Dark'
+shell-theme-light='Win11'
+
+[org/gnome/shell/extensions/just-perfection]
+support-notifier-showed-version=34
+
+[org/gnome/shell/extensions/mediacontrols]
+colored-player-icon=false
+show-control-icons=false
+show-label=false
+
+[org/gnome/shell/extensions/notification-timeout]
+always-normal=true
+ignore-idle=true
+
+[org/gnome/shell/extensions/tiling-assistant]
+active-window-hint-color='rgb(211,70,21)'
+last-version-installed=46
+overridden-settings={'org.gnome.mutter.edge-tiling': <@mb nothing>}
+
+[org/gnome/shell/extensions/user-theme-x]
+name='Win11-Light'
+x-color='prefer-dark'
+x-color-night='prefer-dark'
+x-gtk='Win11-Light'
+x-gtk-night='Win11-Dark'
+x-icons='Win11-dark'
+x-icons-night='Win11-dark'
+x-shell='Win11-Light'
+x-shell-night='Win11-Dark'
+x-stylesheet=false
+
+[org/gnome/shell/extensions/vitals]
+hot-sensors=['_memory_usage_', '_temperature_acpi_thermal zone_', '_processor_usage_']
+icon-style=1
+update-time=1
+
+[org/gnome/shell/world-clocks]
+locations=@av []
+
+[org/gtk/gtk4/settings/file-chooser]
+date-format='regular'
+location-mode='path-bar'
+show-hidden=true
+show-size-column=true
+show-type-column=true
+sidebar-width=162
+sort-column='name'
+sort-directories-first=true
+sort-order='ascending'
+type-format='category'
+view-type='list'
+window-size=(807, 327)
+
+[org/gtk/settings/file-chooser]
+date-format='regular'
+location-mode='path-bar'
+show-hidden=true
+show-size-column=true
+show-type-column=true
+sidebar-width=154
+sort-column='name'
+sort-directories-first=true
+sort-order='ascending'
+type-format='category'
+window-position=(329, 78)
+window-size=(1262, 822)
+
+[org/virt-manager/virt-manager]
+manager-window-height=550
+manager-window-width=550
+
+[org/virt-manager/virt-manager/connections]
+autoconnect=['qemu:///system']
+uris=['qemu:///system']
+
+[org/virt-manager/virt-manager/details]
+show-toolbar=true
+
+[org/virt-manager/virt-manager/paths]
+image-default='/home/test/Documents'
+media-default='/home/test/Documents'
+
+[org/virt-manager/virt-manager/urls]
+isos=['/home/test/Documents/WIN10.PRO.20H2.SUPERLITE+COMPACT.U3.X64.GHOSTSPECTRE.(W).iso']
+
+[org/virt-manager/virt-manager/vmlist-fields]
+disk-usage=false
+network-traffic=false
+
+[org/virt-manager/virt-manager/vms/0c4d9b91067149a09c2a6fe0a261a853]
+autoconnect=1
+scaling=1
+vm-window-size=(1300, 699)
