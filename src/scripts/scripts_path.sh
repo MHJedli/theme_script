@@ -21,6 +21,8 @@ declare -A THEME_PATHS=(
 
     ["MacOS-V1-installer"]="${SCRIPT_DIR}/src/scripts/GNOME/22.04/MacOS-V1/install_MacV1.sh"
     ["MacOS-V1-remover"]="${SCRIPT_DIR}/src/scripts/GNOME/22.04/MacOS-V1/reset_to_defaults.sh"
+    ["MacOS-V1-46-installer"]="${SCRIPT_DIR}/src/scripts/GNOME/24.04/MacOS-V1/install_MacV1.sh"
+    ["MacOS-V1-46-remover"]="${SCRIPT_DIR}/src/scripts/GNOME/24.04/MacOS-V1/reset_to_defaults.sh"
 
     # Cinnamon Themes
     ["Win7-installer"]="${SCRIPT_DIR}/src/scripts/Cinnamon/Windows-7/install_windows7.sh"
