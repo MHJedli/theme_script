@@ -1,13 +1,13 @@
 [apps/update-manager]
 first-run=false
-launch-count=1
-launch-time=int64 1709169739
+launch-count=2
+launch-time=int64 1749634416
 
 [com/ubuntu/update-notifier]
 release-check-time=uint32 1748869544
 
 [org/gnome/control-center]
-last-panel='wifi'
+last-panel='background'
 window-state=(980, 640, false)
 
 [org/gnome/desktop/app-folders]
@@ -30,21 +30,25 @@ name='suse-yast.directory'
 translate=true
 
 [org/gnome/desktop/background]
+color-shading-type='solid'
 picture-options='zoom'
-picture-uri='file:///home/test/.config/background'
-picture-uri-dark='file:///home/test/.config/background'
+picture-uri='file:///home/test/.local/share/backgrounds/Fluent-building-morning.png'
+picture-uri-dark='file:///home/test/.local/share/backgrounds/Fluent-building-night.png'
+primary-color='#000000000000'
+secondary-color='#000000000000'
 
 [org/gnome/desktop/input-sources]
 sources=[('xkb', 'fr')]
+xkb-options=@as []
 
 [org/gnome/desktop/interface]
-color-scheme='prefer-dark'
-cursor-theme='Win7OS-cursors'
+color-scheme='default'
+cursor-theme='Yaru'
 document-font-name='Segoe UI 11'
 enable-animations=true
 font-name='Segoe UI 11'
-gtk-theme='Win11-Light'
-icon-theme='Win11-dark'
+gtk-theme='Win11'
+icon-theme='Win11'
 monospace-font-name='Ubuntu Sans Mono Medium 11 @wght=500'
 toolkit-accessibility=false
 
@@ -63,8 +67,27 @@ application-id='spotify.desktop'
 [org/gnome/desktop/peripherals/keyboard]
 numlock-state=true
 
+[org/gnome/desktop/screensaver]
+color-shading-type='solid'
+picture-options='zoom'
+picture-uri='file:///home/test/.local/share/backgrounds/Fluent-building-night.png'
+primary-color='#000000000000'
+secondary-color='#000000000000'
+
 [org/gnome/evolution-data-server]
 migrated=true
+
+[org/gnome/gnome-system-monitor]
+current-tab='resources'
+show-dependencies=false
+show-whose-processes='user'
+
+[org/gnome/gnome-system-monitor/disktreenew]
+col-6-visible=true
+col-6-width=0
+columns-order=[6]
+sort-col=1
+sort-order=0
 
 [org/gnome/mutter]
 center-new-windows=true
@@ -84,6 +107,13 @@ search-filter-time-type='last_modified'
 initial-size=(890, 550)
 maximized=true
 
+[org/gnome/nm-applet/eap/39fc8430-2614-3432-8a89-9e12b606c60f]
+ignore-ca-cert=false
+ignore-phase2-ca-cert=false
+
+[org/gnome/portal/filechooser/org.gnome.tweaks]
+last-folder-path='/home/test/.local/share/backgrounds'
+
 [org/gnome/settings-daemon/plugins/color]
 night-light-enabled=false
 
@@ -100,13 +130,13 @@ button-padding=-1
 custom-menu-button-icon='distributor-logo-windows'
 custom-menu-button-icon-size=30.0
 disable-scrollview-fade-effect=false
-force-menu-location='MonitorCentered'
+force-menu-location='BottomCentered'
 left-panel-width=250
-menu-arrow-rise=(false, 5)
+menu-arrow-rise=(false, 35)
 menu-button-appearance='Icon'
 menu-button-icon='Custom_Icon'
 menu-button-position-offset=0
-menu-height=575
+menu-height=700
 menu-layout='Eleven'
 menu-width-adjustment=-80
 misc-item-icon-size='Default'
@@ -169,7 +199,7 @@ brightness=0.59999999999999998
 sigma=30
 
 [org/gnome/shell/extensions/caffeine]
-indicator-position-max=2
+indicator-position-max=1
 
 [org/gnome/shell/extensions/coverflowalttab]
 switcher-background-color=(0.93333333333333335, 0.93333333333333335, 0.92549019607843142)
@@ -186,8 +216,8 @@ dot-style-unfocused='DASHES'
 extension-version=68
 global-border-radius=1
 hotkeys-overlay-combo='TEMPORARILY'
-panel-anchors='{"BOE-0x00000000":"MIDDLE"}'
-panel-element-positions='{"BOE-0x00000000":[{"element":"rightBox","visible":true,"position":"stackedTL"},{"element":"showAppsButton","visible":false,"position":"stackedTL"},{"element":"activitiesButton","visible":false,"position":"stackedTL"},{"element":"leftBox","visible":true,"position":"centerMonitor"},{"element":"taskbar","visible":true,"position":"centerMonitor"},{"element":"centerBox","visible":true,"position":"stackedBR"},{"element":"systemMenu","visible":true,"position":"stackedBR"},{"element":"dateMenu","visible":true,"position":"stackedBR"},{"element":"desktopButton","visible":true,"position":"stackedBR"}]}'
+panel-anchors='{"BOE-0x00000000":"MIDDLE","RHT-0x00000000":"MIDDLE"}'
+panel-element-positions='{"BOE-0x00000000":[{"element":"rightBox","visible":true,"position":"stackedTL"},{"element":"showAppsButton","visible":false,"position":"stackedTL"},{"element":"activitiesButton","visible":false,"position":"stackedTL"},{"element":"leftBox","visible":true,"position":"centerMonitor"},{"element":"taskbar","visible":true,"position":"centerMonitor"},{"element":"centerBox","visible":true,"position":"stackedBR"},{"element":"systemMenu","visible":true,"position":"stackedBR"},{"element":"dateMenu","visible":true,"position":"stackedBR"},{"element":"desktopButton","visible":true,"position":"stackedBR"}],"RHT-0x00000000":[{"element":"showAppsButton","visible":false,"position":"stackedTL"},{"element":"activitiesButton","visible":false,"position":"centerMonitor"},{"element":"rightBox","visible":true,"position":"stackedTL"},{"element":"leftBox","visible":true,"position":"centerMonitor"},{"element":"taskbar","visible":true,"position":"centerMonitor"},{"element":"centerBox","visible":true,"position":"stackedBR"},{"element":"systemMenu","visible":true,"position":"stackedBR"},{"element":"dateMenu","visible":true,"position":"stackedBR"},{"element":"desktopButton","visible":true,"position":"stackedBR"}]}'
 panel-lengths='{}'
 panel-positions='{}'
 panel-sizes='{}'
@@ -213,12 +243,12 @@ text-align='center'
 check-x11wayland=true
 
 [org/gnome/shell/extensions/dmthemechanger]
-cursor-theme-dark='Win7OS-cursors'
-cursor-theme-light='Win7OS-cursors'
+cursor-theme-dark='Yaru'
+cursor-theme-light='Yaru'
 darklight-transition-duration=500
 darkmode-toggle-clickdelay=1000
 first-time-install=false
-gtk3-theme-dark='Win11-Light'
+gtk3-theme-dark='Win11-Dark'
 gtk3-theme-light='Win11'
 icon-theme-dark='Win11-dark'
 icon-theme-light='Win11'
@@ -256,7 +286,7 @@ x-shell-night='Win11-Dark'
 x-stylesheet=false
 
 [org/gnome/shell/extensions/vitals]
-hot-sensors=['_memory_usage_', '_temperature_acpi_thermal zone_', '_processor_usage_']
+hot-sensors=['_memory_usage_', '_processor_usage_', '__network-rx_boot__']
 icon-style=1
 update-time=1
 
@@ -275,7 +305,7 @@ sort-directories-first=true
 sort-order='ascending'
 type-format='category'
 view-type='list'
-window-size=(807, 327)
+window-size=(807, 371)
 
 [org/gtk/settings/file-chooser]
 date-format='regular'

@@ -39,6 +39,7 @@ if check_internet; then
     log_message "INFO" "Downloading Windows 11 Theme"
     printc "YELLOW" "-> Downloading Windows 11 Theme..."
     git clone https://github.com/yeyushengfan258/Win11-gtk-theme.git "${TMP_PATH}/Win11-gtk-theme" || handle_error "Failed to clone Windows 11 GTK Theme repository"
+    bash ${TMP_PATH}/Win11-gtk-theme/install.sh || handle_error "Failed to install Windows 11 GTK Theme"
     bash ${TMP_PATH}/Win11-gtk-theme/install.sh -l -c dark || handle_error "Failed to install Windows 11 GTK Theme"
 
     log_message "INFO" "Downloading Windows 11 Icons"
