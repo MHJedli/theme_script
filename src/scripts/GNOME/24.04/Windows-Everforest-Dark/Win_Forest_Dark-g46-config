@@ -146,8 +146,8 @@ translate=true
 [org/gnome/desktop/background]
 color-shading-type='solid'
 picture-options='zoom'
-picture-uri='file:///home/qqqqqq/Pictures/Wallpapers/wallpapper.jpg'
-picture-uri-dark='file:///home/test/Pictures/wallpaper.jpg'
+picture-uri='file:///home/test/.local/share/backgrounds/wallpaper.jpg'
+picture-uri-dark='file:///home/test/.local/share/backgrounds/wallpaper.jpg'
 primary-color='#000000'
 secondary-color='#000000'
 
@@ -172,7 +172,7 @@ font-antialiasing='rgba'
 font-hinting='slight'
 font-name='IBM Plex Sans 10'
 gtk-theme='Everforest-Dark'
-icon-theme='Tela-grey-dark'
+icon-theme='Tela-grey-light'
 monospace-font-name='FiraCode Nerd Font Mono 10'
 show-battery-percentage=true
 toolbar-style='text'
@@ -500,6 +500,9 @@ ignore-phase2-ca-cert=false
 ignore-ca-cert=false
 ignore-phase2-ca-cert=false
 
+[org/gnome/portal/filechooser/org.gnome.tweaks]
+last-folder-path='/home/test/.local/share/backgrounds'
+
 [org/gnome/power-manager]
 info-history-time=86400
 info-history-type='charge'
@@ -555,7 +558,7 @@ sleep-inactive-ac-timeout=3600
 sleep-inactive-ac-type='nothing'
 
 [org/gnome/shell]
-app-picker-layout=[{'software-properties-drivers.desktop': <{'position': <0>}>, 'org.gnome.clocks.desktop': <{'position': <1>}>, 'org.gnome.Settings.desktop': <{'position': <2>}>, 'org.gnome.Calculator.desktop': <{'position': <3>}>, 'org.gnome.SystemMonitor.desktop': <{'position': <4>}>, 'btop.desktop': <{'position': <5>}>, 'ca.desrt.dconf-editor.desktop': <{'position': <6>}>, 'firmware-updater_firmware-updater.desktop': <{'position': <7>}>, 'remote-viewer.desktop': <{'position': <8>}>, 'gnome-language-selector.desktop': <{'position': <9>}>, 'Utilities': <{'position': <10>}>, 'spotify.desktop': <{'position': <11>}>, 'org.gnome.TextEditor.desktop': <{'position': <12>}>, 'virt-manager.desktop': <{'position': <13>}>, 'code.desktop': <{'position': <14>}>}, {'org.gnome.PowerStats.desktop': <{'position': <0>}>, 'snap-store_snap-store.desktop': <{'position': <1>}>, 'software-properties-gtk.desktop': <{'position': <2>}>, 'update-manager.desktop': <{'position': <3>}>, 'gnome-session-properties.desktop': <{'position': <4>}>}]
+app-picker-layout=[{'software-properties-drivers.desktop': <{'position': <0>}>, 'org.gnome.clocks.desktop': <{'position': <1>}>, 'org.gnome.Settings.desktop': <{'position': <2>}>, 'org.gnome.Calculator.desktop': <{'position': <3>}>, 'org.gnome.SystemMonitor.desktop': <{'position': <4>}>, 'ca.desrt.dconf-editor.desktop': <{'position': <5>}>, 'firmware-updater_firmware-updater.desktop': <{'position': <6>}>, 'gnome-language-selector.desktop': <{'position': <7>}>, 'Utilities': <{'position': <8>}>, 'org.gnome.TextEditor.desktop': <{'position': <9>}>, 'code.desktop': <{'position': <10>}>}, {'org.gnome.PowerStats.desktop': <{'position': <0>}>, 'snap-store_snap-store.desktop': <{'position': <1>}>, 'software-properties-gtk.desktop': <{'position': <2>}>, 'update-manager.desktop': <{'position': <3>}>, 'gnome-session-properties.desktop': <{'position': <4>}>}]
 command-history=['r']
 disable-user-extensions=false
 disabled-extensions=['custom-osd@neuromorph', 'visualizer@sound.org', 'widgets@aylur', 'pickawindow@lluo.gitlab.com', 'lightshell@dikasp.gitlab', 'ubuntu-dock@ubuntu.com', 'activate-window-by-title@lucaswerkmeister.de', 'ubuntu-appindicators@ubuntu.com', 'status-area-horizontal-spacing@mathematical.coffee.gmail.com', 'user-theme@gnome-shell-extensions.gcampax.github.com']
@@ -656,7 +659,7 @@ brightness=0.59999999999999998
 sigma=0
 
 [org/gnome/shell/extensions/caffeine]
-indicator-position-max=2
+indicator-position-max=1
 nightlight-control='never'
 user-enabled=true
 
@@ -734,8 +737,8 @@ group-apps=true
 hotkeys-overlay-combo='TEMPORARILY'
 leftbox-padding=4
 leftbox-size=13
-panel-anchors='{"BOE-0x00000000":"MIDDLE"}'
-panel-element-positions='{"BOE-0x00000000":[{"element":"showAppsButton","visible":false,"position":"stackedTL"},{"element":"activitiesButton","visible":false,"position":"stackedTL"},{"element":"leftBox","visible":true,"position":"stackedTL"},{"element":"centerBox","visible":true,"position":"centerMonitor"},{"element":"taskbar","visible":true,"position":"centerMonitor"},{"element":"rightBox","visible":true,"position":"stackedBR"},{"element":"systemMenu","visible":true,"position":"stackedBR"},{"element":"dateMenu","visible":true,"position":"stackedBR"},{"element":"desktopButton","visible":false,"position":"stackedBR"}]}'
+panel-anchors='{"BOE-0x00000000":"MIDDLE","RHT-0x00000000":"MIDDLE"}'
+panel-element-positions='{"BOE-0x00000000":[{"element":"showAppsButton","visible":false,"position":"stackedTL"},{"element":"activitiesButton","visible":false,"position":"stackedTL"},{"element":"leftBox","visible":true,"position":"stackedTL"},{"element":"centerBox","visible":true,"position":"centerMonitor"},{"element":"taskbar","visible":true,"position":"centerMonitor"},{"element":"rightBox","visible":true,"position":"stackedBR"},{"element":"systemMenu","visible":true,"position":"stackedBR"},{"element":"dateMenu","visible":true,"position":"stackedBR"},{"element":"desktopButton","visible":false,"position":"stackedBR"}],"RHT-0x00000000":[{"element":"showAppsButton","visible":false,"position":"stackedTL"},{"element":"activitiesButton","visible":false,"position":"stackedTL"},{"element":"leftBox","visible":true,"position":"stackedTL"},{"element":"centerBox","visible":true,"position":"stackedBR"},{"element":"rightBox","visible":true,"position":"stackedBR"},{"element":"taskbar","visible":true,"position":"centerMonitor"},{"element":"systemMenu","visible":true,"position":"stackedBR"},{"element":"dateMenu","visible":true,"position":"stackedBR"},{"element":"desktopButton","visible":true,"position":"stackedBR"}]}'
 panel-lengths='{"BOE-0x00000000":100}'
 panel-positions='{}'
 panel-sizes='{"BOE-0x00000000":40}'
@@ -765,7 +768,7 @@ cursor-theme-light='Yaru'
 first-time-install=false
 gtk3-theme-dark='Everforest-Dark'
 gtk3-theme-light='Everforest-Dark'
-icon-theme-dark='Tela-grey-dark'
+icon-theme-dark='Tela-grey-light'
 icon-theme-light='Tela-grey-light'
 shell-theme-dark='Everforest-Dark'
 shell-theme-light='Everforest-Dark'
@@ -846,7 +849,7 @@ x-night=true
 fixed-widths=true
 hide-icons=false
 hide-zeros=true
-hot-sensors=['_system_load_1m_', '__network-rx_boot__', '__network-tx_boot__']
+hot-sensors=['_memory_usage_', '_processor_usage_', '__network-rx_ses__']
 position-in-panel=3
 show-storage=true
 storage-measurement=1
